@@ -1,0 +1,412 @@
+ID,Title,State,State Reason,Number,Created At,Updated At,Closed At,URL,Author,Labels,Assignees,Comments,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24,Unnamed: 25,Unnamed: 26,Unnamed: 27,Unnamed: 28,Unnamed: 29,Unnamed: 30,Unnamed: 31,Unnamed: 32,Unnamed: 33,Unnamed: 34,Unnamed: 35,Unnamed: 36,Unnamed: 37,Unnamed: 38,Unnamed: 39,Unnamed: 40,Unnamed: 41,Unnamed: 42,Unnamed: 43,Unnamed: 44,Unnamed: 45,Unnamed: 46,Unnamed: 47,Unnamed: 48,Unnamed: 49,Unnamed: 50,Unnamed: 51,Unnamed: 52,Unnamed: 53,Unnamed: 54,Unnamed: 55,Unnamed: 56,Unnamed: 57,Unnamed: 58,Unnamed: 59,Unnamed: 60,Unnamed: 61,Unnamed: 62,Unnamed: 63,Unnamed: 64,Unnamed: 65,Unnamed: 66,Unnamed: 67,Unnamed: 68,Unnamed: 69,Unnamed: 70,Unnamed: 71,Unnamed: 72,Unnamed: 73,Unnamed: 74,Unnamed: 75,Unnamed: 76,Unnamed: 77,Unnamed: 78,Unnamed: 79,Unnamed: 80,Unnamed: 81,Unnamed: 82,Unnamed: 83,Unnamed: 84,Unnamed: 85,Unnamed: 86,Unnamed: 87,Unnamed: 88,Unnamed: 89,Unnamed: 90,Unnamed: 91,Unnamed: 92,Unnamed: 93,Unnamed: 94,Unnamed: 95,Unnamed: 96,Unnamed: 97,Unnamed: 98,Unnamed: 99,Unnamed: 100,Unnamed: 101,Unnamed: 102,Unnamed: 103,0,0.1,0.2,24,Classification
+I_kwDOAJZX9s6cs998,Unable to Correctly Render Colored Text in Ghost ,CLOSED,NOT_PLANNED,21496.0,2024-11-01T13:26:37Z,2024-11-04T11:26:49Z,2024-11-04T11:12:17Z,https://github.com/TryGhost/Ghost/issues/21496,imseanpan,support request,,"imseanpan (2024-11-03T10:19:52Z): ### Update
+
+After further debugging, I found that the saved HTML used the `render` method from the `kg-lexical-html-renderer` package. Fortunately, I found the `render(): string` method in the `utils->TextContent.ts` file and discovered that the `node` object does have the `__style` property. However, the `LexicalNode` defined in TypeScript does not include this property.
+
+To verify this issue, I added the following experimental code:
+
+```typescript
+// imseanpan add test code
+if (node.__style !== '') {
+    const span = document.createElement('span');            
+    span.setAttribute('style', node.__style);
+    span.textContent = node.getTextContent();
+    currentNode.append(span);            
+    continue;
+}
+```
+It appears to be working successfully. Although my code ran successfully, it is not rigorous. Therefore, I'm just identifying the issue and confirming the problematic code location. If possible, I hope the official team can quickly fix this issue and add support for changing text color so that we can happily use Ghost. 
+
+<img width=""1350"" alt=""20241103180642"" src=""https://github.com/user-attachments/assets/5c315108-5c0c-40da-91b8-8d49dc6e58da"">
+
+<img width=""878"" alt=""20241103181511"" src=""https://github.com/user-attachments/assets/b18bc8bb-27c2-4924-b8bd-df5a29fd0781"">
+
+<img width=""825"" alt=""20241103181708"" src=""https://github.com/user-attachments/assets/67775cc2-cecd-4e8e-9b3c-1f0a2e8723ab"">
+
+Thank you!
+ | kevinansfield (2024-11-04T11:11:24Z): Style support for text was intentionally left out. I thought we also had a transform to strip style properties on the Lexical side of things too but I can't find that now.
+
+It's a design decision for our editor to provide minimal routes to creating poorly designed content and text color was a big part of that, not just for design but because of the accessibility issues that can create across light/dark mode and ensuring content displays correctly across different themes. On top of that, style attributes can leak across copy/paste into the editor which then creates a whole lot of other issues because there's no real way to undo that unless you add in support for editing all of the different styles that can be attached.
+
+As such I wouldn't consider this a bug. If you're looking to make changes in your own fork then the forum ([I see you've already duplicated your question there](https://forum.ghost.org/t/unable-to-correctly-render-colored-text-in-ghost/52144/1)) is a better place to get support.<br><br>\_If\_ we were to support text color it would likely be done via a custom property on our lexical nodes that is rendered as a class attribute. That way Ghost would be able to provide some default colours which can be overridden by themes, without hard-coded style attributes causing potential problems. | github-actions (2024-11-04T11:12:20Z): Hey @imseanpan 👋 We ask that you please do not use GitHub for help or support 😄. We use GitHub solely for bug-tracking and community-driven development.
+
+Many questions can be answered by reviewing our [documentation](https://ghost.org/docs/). If you can't find an answer then our [forum](https://forum.ghost.org/c/help/6) is a great place to get community support, plus it helps create a central location for searching problems/solutions.
+
+FYI: Many projects use issue templates to point you in the right direction. Reading the guidelines or issue templates before opening issues can save you and project maintainers valuable time.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s6b_7EA,[Bug] New member sign up notification email address is still noreply@domain.com instead of support email or config smtp email,CLOSED,COMPLETED,21423.0,2024-10-28T03:54:37Z,2024-10-29T16:45:40Z,2024-10-28T13:46:43Z,https://github.com/TryGhost/Ghost/issues/21423,MFYDev,,,"kevinansfield (2024-10-28T13:46:43Z): I've re-opened [the original issue](https://github.com/TryGhost/Ghost/issues/21423) to avoid duplicates. | markstos (2024-10-29T16:45:39Z): @kevinansfield Rather than linking back to a different issue, you accidentally make a circular reference back to this seem ticket. Looks like you meant to link to:
+
+https://github.com/TryGhost/Ghost/issues/17922",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s6H4Gho,Author slug with one letter causes failed filter,CLOSED,COMPLETED,20133.0,2024-05-05T17:07:40Z,2024-10-17T15:35:40Z,2024-10-17T15:35:28Z,https://github.com/TryGhost/Ghost/issues/20133,betschki,P4 - Low,,"Tanu1201 (2024-05-14T04:24:35Z): Hey, I am Tanu sharma having 2 year of exp in SDE field can I take this issue? | StanTraykov (2024-06-30T16:30:44Z): Can confirm with current Ghost(Pro) trial; disagree somewhat with the 'low' categorization. It's stressful to a new user as the error message is so unrelated as to cause general alarm of having broken everything :). Once the cause is known (thanks for submitting this issue!), it can be resolved easily for the existing user. | cathysarisky (2024-10-08T18:03:48Z): This looks to be deep within @tryghost/nql-lang...  | vikaspotluri123 (2024-10-08T18:48:00Z): Speaking of which... I'm pretty sure this is a duplicate of https://github.com/TryGhost/NQL/issues/20 | cathysarisky (2024-10-08T18:53:34Z): Agreed. Should retitle this issue “bad slugs generated on user creation”…. 
+
+I've filed a PR that makes it impossible to get into this state (since fixing the NQL issue is a bigger issue)",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s6DrPpk,Ghost cannot connect to Mysql AWS RDS instance with latest CA from AWS,CLOSED,COMPLETED,19928.0,2024-03-26T19:33:32Z,2024-03-28T10:18:52Z,2024-03-28T10:18:41Z,https://github.com/TryGhost/Ghost/issues/19928,alexgorb2016,,,vikaspotluri123 (2024-03-27T02:35:47Z): Seems to be a duplicate of https://github.com/TryGhost/Ghost/issues/19462 | daniellockyer (2024-03-28T10:18:41Z): This is fixed in https://github.com/TryGhost/Ghost/commit/ec25aed06f853ad222ebd2706304e66309112270 and will be released with the next version of Ghost 🙂 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s59B77l,Deleting a published post leaves you in the editor,CLOSED,NOT_PLANNED,19563.0,2024-01-24T07:54:10Z,2024-02-05T23:57:37Z,2024-01-24T07:56:30Z,https://github.com/TryGhost/Ghost/issues/19563,danielraffel,,,daniellockyer (2024-01-24T07:56:30Z): Duplicate of [https://github.com/TryGhost/Ghost/issues/19408](https://github.com/TryGhost/Ghost/issues/19408) | danielraffel (2024-02-05T23:57:35Z): This is reproducible in ghost 5.79.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s58_IEM,🐛 Custom excerpts containing escaped characters are truncated inappropriately,CLOSED,NOT_PLANNED,19559.0,2024-01-23T20:26:13Z,2024-01-24T14:31:55Z,2024-01-24T14:31:11Z,https://github.com/TryGhost/Ghost/issues/19559,9larsons,,9larsons,55sketch (2024-01-24T14:31:54Z): Closed as duplicate,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s56mUQl,can't return to previous page after deleting post,CLOSED,COMPLETED,19408.0,2023-12-27T03:19:07Z,2024-04-22T15:39:33Z,2024-01-26T02:46:16Z,https://github.com/TryGhost/Ghost/issues/19408,JaydenForYou,"bug, affects:editor",,"kevinansfield (2024-01-24T08:07:18Z): Is this still reproducible? [A related fix](https://github.com/TryGhost/Ghost/pull/19369) was included in the 5.76.0 release and I've been unable to reproduce in my own tests. | JaydenForYou (2024-01-26T02:46:16Z): > Is this still reproducible? [A related fix](https://github.com/TryGhost/Ghost/pull/19369) was included in the 5.76.0 release and I've been unable to reproduce in my own tests.
+
+[confirmed]bug fixed in the 5.76.0.thanks. | danielraffel (2024-02-05T23:59:02Z): This bug was marked as a duplicate of #19563 however it is still reproductive in ghost 5.79.0 | danielraffel (2024-02-05T23:59:39Z): > Is this still reproducible? [A related fix](https://github.com/TryGhost/Ghost/pull/19369) was included in the 5.76.0 release and I've been unable to reproduce in my own tests.
+
+Yea I can reproduce in #19563 in ghost 5.79.0 | mfitzp (2024-02-18T20:30:11Z): I've just created a new site on Ghost Pro & still see this bug. However, I imported the articles from another install. Perhaps there is something in the imported articles that is causing this? If I create a new post from scratch, and then delete that, there is no error.
+
+The traceback is 
+
+```js
+Uncaught (in promise) Error: Attempted to set 'lexical' on the deleted record <post:65d20658f6311b0001575eb6>
+    at Ye.setDirtyAttribute (-private.js:4752:1)
+    at e.set (-private.js:148:1)
+    at Me._set (index.js:1776:1)
+    at Me.set (index.js:1727:1)
+    at e.r [as lexical] (index.js:878:1)
+    at Oe (index.js:1327:1)
+    at index.js:1357:1
+    at Oe (index.js:1323:1)
+    at we.set (observable.js:172:1)
+    at we.beforeSaveTask (lexical-editor.js:544:1)
+    at beforeSaveTask.next (<anonymous>)
+    at e.GeneratorState.step (generator-state.js:28:1)
+    at e.TaskInstanceExecutor.generatorStep (executor.js:243:1)
+    at e.TaskInstanceExecutor.handleResolvedContinueValue (executor.js:123:1)
+    at e.TaskInstanceExecutor.proceedSync (executor.js:87:1)
+    at e.TaskInstanceExecutor.start (executor.js:39:1)
+    at i.start (base.js:56:1)
+    at refresh.js:23:1
+    at Array.forEach (<anonymous>)
+    at e.default.process (refresh.js:23:1)
+    at r.refresh (scheduler.js:47:1)
+    at r.perform (scheduler.js:39:1)
+    at a._performShared (task.js:68:1)
+    at a._perform (task.js:56:1)
+    at we.saveTask (lexical-editor.js:467:1)
+    at saveTask.next (<anonymous>)
+    at e.GeneratorState.step (generator-state.js:28:1)
+    at e.TaskInstanceExecutor.generatorStep (executor.js:243:1)
+    at e.TaskInstanceExecutor.handleResolvedContinueValue (executor.js:123:1)
+    at e.TaskInstanceExecutor.proceedSync (executor.js:87:1)
+    at e.TaskInstanceExecutor.start (executor.js:39:1)
+    at i.start (base.js:56:1)
+    at refresh.js:23:1
+    at Array.forEach (<anonymous>)
+    at e.default.process (refresh.js:23:1)
+    at r.refresh (scheduler.js:47:1)
+    at r.perform (scheduler.js:39:1)
+    at a._performShared (task.js:68:1)
+    at a._perform (task.js:56:1)
+    at we.autosaveTask (lexical-editor.js:408:1)
+    at autosaveTask.next (<anonymous>)
+    at e.GeneratorState.step (generator-state.js:28:1)
+    at e.TaskInstanceExecutor.generatorStep (executor.js:243:1)
+    at e.TaskInstanceExecutor.handleResolvedContinueValue (executor.js:123:1)
+    at e.TaskInstanceExecutor.proceedSync (executor.js:87:1)
+    at e.TaskInstanceExecutor.start (executor.js:39:1)
+    at i.start (base.js:56:1)
+    at refresh.js:23:1
+    at Array.forEach (<anonymous>)
+    at e.default.process (refresh.js:23:1)
+``` | AbdoCode (2024-04-22T15:39:32Z): Bug still exists in ghost 5.81.1",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s537Sa8,Input image exceeds pixel limit,CLOSED,NOT_PLANNED,19141.0,2023-11-27T11:05:52Z,2024-04-03T09:05:14Z,2024-04-03T09:05:14Z,https://github.com/TryGhost/Ghost/issues/19141,truekasun,"bug, stale",,"daniellockyer (2023-11-28T08:57:19Z): This is a duplicate of https://github.com/TryGhost/Ghost/issues/17278, but it was closed at the time. I'll tag this one a bug and accept PRs to fix it 🙂  | github-actions (2024-03-27T09:04:45Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5334TQ,Installation from a .zip file breaks images in published posts,CLOSED,NOT_PLANNED,19132.0,2023-11-26T17:58:48Z,2023-11-27T07:51:10Z,2023-11-27T07:50:59Z,https://github.com/TryGhost/Ghost/issues/19132,ceecko,,,daniellockyer (2023-11-27T07:50:59Z): Closing as a duplicate of https://github.com/TryGhost/Ghost/issues/18948,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s53G47q,Emoji picker of callout cards has a light background in dark mode,CLOSED,COMPLETED,19038.0,2023-11-17T05:14:50Z,2023-12-11T11:31:29Z,2023-12-11T11:31:29Z,https://github.com/TryGhost/Ghost/issues/19038,stromfeldt,"bug, affects:editor, P3 - Medium, design",sanne-san,"Abhishek7Tech (2023-11-18T13:50:15Z): Hello @stromfeldt @kevinansfield  I would like to contribute and fix this issue. | suprabhat15 (2023-11-18T19:58:56Z): hi @kevinansfield I am interested to work on this issue. | markstos (2023-11-21T13:18:32Z): @Abhishek7Tech @suprabhat15 Normally you don't have to wait for permission to contribute to open source. Just code a patch and submit a PR if you are interested.
+
+Even if someone replies and says ""OK, go work on it"", there's not a guarantee your PR will be accepted anyway, perhaps for quality or style reasons.
+
+If you want to want to let other people you are working on a PR so they don't duplicate effort, you can leave a note like ""I'm starting on a PR for this now"". 
+
+And if you two of you want to contribute competing PRs, you can do that. The one that's contributed first or if some higher quality is likely the one to be merged. 
+
+If the only reason you would be creating the PR is because you are interested in having it merged, and not because you would actually use it yourself, I suppose that's that's a reason to find out if there's interest first.
+
+But this issue seems like it's a clearly a bug that the project would definitely want fixed.  | asenseofpradhyu (2023-11-21T16:23:03Z): Hello @stromfeldt 
+
+The fix for this issue has been implemented in the [Koenig](https://github.com/TryGhost/Koenig) repository. Once the changes are merged, the dark mode will work in the emoji picker.
+
+You can track the progress of the pull request https://github.com/TryGhost/Koenig/pull/1085
+
+CC: @daniellockyer ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s52kK_W,Lexical kg-cards missing on website after ghost update with zip,CLOSED,COMPLETED,18948.0,2023-11-12T01:51:23Z,2024-05-21T13:46:38Z,2024-05-21T13:46:28Z,https://github.com/TryGhost/Ghost/issues/18948,ASAMedia,,,"ASAMedia (2023-11-12T01:58:12Z): An example from the website I'm running ([lyonel-feininger-gymnasium.de](https://lyonel-feininger-gymnasium.de/)):
+It looks like this in the editor 
+![grafik](https://github.com/TryGhost/Ghost/assets/41484117/7ae64619-aebd-4858-9ba6-d02f542bfb20)
+
+and like this on the website
+![grafik](https://github.com/TryGhost/Ghost/assets/41484117/24c11f2b-89c2-4684-a15c-4d9cb95450bc)
+
+As you can see, the snow picture is nowhere to be seen. 
+ | ASAMedia (2023-11-12T14:29:06Z): Ok, I've got some more information:
+I looked into the db and found that the images are against my previous claims in fact are NOT present in the lexical field of the post
+
+Here is the code snippet from the working original docker version
+```
+ receive emails when new content is publishrfed!</p><figure class=""kg-card kg-image-card kg-width-wide""><img src=""__GHOST_URL__/content/images/2023/11/IMG_2658.jpeg"" class=""kg-image"" alt="""" loading=""lazy"" width=""2000"" height=""1500"" srcset=""__GHOST_URL__/content/images/size/w600/2023/11/IMG_2658.jpeg 600w, __GHOST_URL__/content/images/size/w1000/2023/11/IMG_2658.jpeg 1000w, __GHOST_URL__/content/images/size/w1600/2023/11/IMG_2658.jpeg 1600w, __GHOST_URL__/content/images/2023/11/IMG_2658.jpeg 2000w"" sizes=""(min-width: 1200px) 1200px""></figure><figure class=""kg-card kg-image-card""><img src=""__GHOST_URL__/content/images/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png"" class=""kg-image"" alt="""" loading=""lazy"" width=""1920"" height=""673"" srcset=""__GHOST_URL__/content/images/size/w600/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 600w, __GHOST_URL__/content/images/size/w1000/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1000w, __GHOST_URL__/content/images/size/w1600/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1600w, __GHOST_URL__/content/images/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1920w"" sizes=""(min-width: 720px) 720px""></figure><hr>
+```
+And here the one I'm getting with my updated version inside docker
+```
+ receive emails when new content is publishrfed!</p>
+```
+
+**Now the question where does this go wrong?** | ASAMedia (2023-11-12T21:52:42Z): Another Update:
+I downloaded the original source files from [5.71.2](https://github.com/TryGhost/Ghost/releases/tag/v5.71.2) build them to an archive with `yarn archive` and used the resulting [ghost-5.71.2.tgz.zip](https://github.com/TryGhost/Ghost/files/13329268/ghost-5.71.2.tgz.zip) to update the ghost 5.71.0-alpine docker.
+
+Result: 
+The problem is still occuring the same way as before :(
+
+So it seems like in the build or update process the reference to the js for the kg-cards/nodes goes missing.
+I will attach some log info below, where the missing functions/attr are named when clicking the save/update button in the lexical-editor:
+<details>
+<summary>log output</summary>
+<br>
+<code>
+lfg-ghost    | CodeBlockNode must implement static ""getType"" method
+lfg-ghost    | CodeBlockNode must implement static ""clone"" method
+lfg-ghost    | CodeBlockNode must implement ""decorate"" method
+lfg-ghost    | CodeBlockNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CodeBlockNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ImageNode must implement static ""getType"" method
+lfg-ghost    | ImageNode must implement static ""clone"" method
+lfg-ghost    | ImageNode must implement ""decorate"" method
+lfg-ghost    | ImageNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | MarkdownNode must implement static ""getType"" method
+lfg-ghost    | MarkdownNode must implement static ""clone"" method
+lfg-ghost    | MarkdownNode must implement ""decorate"" method
+lfg-ghost    | MarkdownNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | MarkdownNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | VideoNode must implement static ""getType"" method
+lfg-ghost    | VideoNode must implement static ""clone"" method
+lfg-ghost    | VideoNode must implement ""decorate"" method
+lfg-ghost    | VideoNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | AudioNode must implement static ""getType"" method
+lfg-ghost    | AudioNode must implement static ""clone"" method
+lfg-ghost    | AudioNode must implement ""decorate"" method
+lfg-ghost    | AudioNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | AudioNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CalloutNode must implement static ""getType"" method
+lfg-ghost    | CalloutNode must implement static ""clone"" method
+lfg-ghost    | CalloutNode must implement ""decorate"" method
+lfg-ghost    | CalloutNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CalloutNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HorizontalRuleNode must implement static ""getType"" method
+lfg-ghost    | HorizontalRuleNode must implement static ""clone"" method
+lfg-ghost    | HorizontalRuleNode must implement ""decorate"" method
+lfg-ghost    | HorizontalRuleNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HorizontalRuleNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HtmlNode must implement static ""getType"" method
+lfg-ghost    | HtmlNode must implement static ""clone"" method
+lfg-ghost    | HtmlNode must implement ""decorate"" method
+lfg-ghost    | HtmlNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HtmlNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | FileNode must implement static ""getType"" method
+lfg-ghost    | FileNode must implement static ""clone"" method
+lfg-ghost    | FileNode must implement ""decorate"" method
+lfg-ghost    | FileNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ToggleNode must implement static ""getType"" method
+lfg-ghost    | ToggleNode must implement static ""clone"" method
+lfg-ghost    | ToggleNode must implement ""decorate"" method
+lfg-ghost    | ToggleNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ToggleNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ButtonNode must implement static ""getType"" method
+lfg-ghost    | ButtonNode must implement static ""clone"" method
+lfg-ghost    | ButtonNode must implement ""decorate"" method
+lfg-ghost    | ButtonNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ButtonNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HeaderNode must implement static ""getType"" method
+lfg-ghost    | HeaderNode must implement static ""clone"" method
+lfg-ghost    | HeaderNode must implement ""decorate"" method
+lfg-ghost    | HeaderNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HeaderNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | BookmarkNode must implement static ""getType"" method
+lfg-ghost    | BookmarkNode must implement static ""clone"" method
+lfg-ghost    | BookmarkNode must implement ""decorate"" method
+lfg-ghost    | PaywallNode must implement static ""getType"" method
+lfg-ghost    | PaywallNode must implement static ""clone"" method
+lfg-ghost    | PaywallNode must implement ""decorate"" method
+lfg-ghost    | PaywallNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | PaywallNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ProductNode must implement static ""getType"" method
+lfg-ghost    | ProductNode must implement static ""clone"" method
+lfg-ghost    | ProductNode must implement ""decorate"" method
+lfg-ghost    | ProductNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmbedNode must implement static ""getType"" method
+lfg-ghost    | EmbedNode must implement static ""clone"" method
+lfg-ghost    | EmbedNode must implement ""decorate"" method
+lfg-ghost    | EmbedNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmbedNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailNode must implement static ""getType"" method
+lfg-ghost    | EmailNode must implement static ""clone"" method
+lfg-ghost    | EmailNode must implement ""decorate"" method
+lfg-ghost    | EmailNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | GalleryNode must implement static ""getType"" method
+lfg-ghost    | GalleryNode must implement static ""clone"" method
+lfg-ghost    | GalleryNode must implement ""decorate"" method
+lfg-ghost    | GalleryNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | GalleryNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailCtaNode must implement static ""getType"" method
+lfg-ghost    | EmailCtaNode must implement static ""clone"" method
+lfg-ghost    | EmailCtaNode must implement ""decorate"" method
+lfg-ghost    | EmailCtaNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailCtaNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | SignupNode must implement static ""getType"" method
+lfg-ghost    | SignupNode must implement static ""clone"" method
+lfg-ghost    | SignupNode must implement ""decorate"" method
+lfg-ghost    | SignupNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | SignupNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CollectionNode must implement static ""getType"" method
+lfg-ghost    | CollectionNode must implement static ""clone"" method
+lfg-ghost    | CollectionNode must implement ""decorate"" method
+lfg-ghost    | CollectionNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CollectionNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | [2023-11-12 21:53:13] INFO Adding one-off job to queue with current length = 0 called 'sendWebmentions'
+lfg-ghost    | [2023-11-12 21:53:13] INFO ""PUT /ghost/api/admin/posts/654ff84b2fecd90001949776/?formats=mobiledoc%2Clexical&save_revision=1&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Cpost_revisions%2Cpost_revisions.author"" 200 133ms
+
+</code>
+</details> | sergiosgc (2023-11-28T18:17:26Z): Something in the build system is broken. I build my docker instance similar to how you do it, and since 5.71.0, at least, I get two `kg-default-nodes` modules, one in `ghost/node_modules/@tryghost` and one in `ghost/ghost/core/node_modules/@tryghost`. Removing `ghost/ghost/core/node_modules` fixes the issue.
+
+The duplicate module import creates two definitions of [KoenigDecoratorNode](https://github.com/TryGhost/Koenig/blob/d472dd6f74d5123edb202a51317cb42004e44a13/packages/kg-default-nodes/lib/KoenigDecoratorNode.js). This causes the `instanceof` test in `$isKoenigCard` to fail, which causes [`exportTopLevelElementOrDecorator`](https://github.com/TryGhost/Koenig/blob/d472dd6f74d5123edb202a51317cb42004e44a13/packages/kg-lexical-html-renderer/lib/convert-to-html-string.js#L37) to fail on elements where `$isKoenigCard` should return true but returns false (Images and Cards, at least).
+
+I know very little about Ghost's build system, but someone with more knowledge than me should be able to fix this fairly quickly.
+
+The official images do not exhibit this problem. They may be building ghost differently. | ASAMedia (2023-11-29T16:05:04Z): Wow great! Thanks @sergiosgc
+That will solve the issue till a fix is implemented. 
+
+Looks like `kg-default-nodes` is imported here `""@tryghost/kg-default-nodes"": ""0.2.9"",` in the [ghost/core/package.json](https://github.com/TryGhost/Ghost/blob/main/ghost/core/package.json#L105) 
+and 
+here `const {DEFAULT_NODES} = require('@tryghost/kg-default-nodes');` in the [ghost/core/core/server/lib/lexical.js](https://github.com/TryGhost/Ghost/blob/8fc6fef1685f216eef8eece40c3a38d7225beeb8/ghost/core/core/server/lib/lexical.js#L14)
+
+When I delete the line in the `package.json` and build, everything works as expected.
+
+Maybe this could be a valid **fix**? | hsarji (2023-12-17T15:03:22Z): This problem seems to impact Ghost(Pro) subscribers as well. I have a JavaScript code that uses the Admin API JavaScript Client that updates the content of one post. It used to work but now isn't working. I am seeing no errors. The post history shows that it is being updated but the content isn't changing. If I recall correctly, the source for the blog post used to show that it uses a markdown card. Now, I don't see a markdown class in the post's source. 
+
+I tried troubleshooting the code for several hours with the help of Bing AI to no avail. I agree, partially, with its observation:
+
+> The issue affects the mobiledoc format for posts, which is used by the Ghost API. The mobiledoc format is a JSON document that defines the structure and content of a post using cards, atoms, and markups. The problem is that the Ghost API is not creating the cards correctly, resulting in empty or corrupted posts.
+
+I think the problem is that the API isn't creating the cards, so my post's history shows it is being updated but the Markdown card inside the post isn't changing.  | github-actions (2024-04-15T16:04:32Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | daniellockyer (2024-05-21T13:46:28Z): This should be fixed now!",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,Duplicate
+I_kwDOAJZX9s50nTEy,Discord webhooks don't seem to function anymore (via Slack integration),CLOSED,NOT_PLANNED,18723.0,2023-10-23T06:39:33Z,2023-10-23T09:19:22Z,2023-10-23T09:19:11Z,https://github.com/TryGhost/Ghost/issues/18723,elijahsgh,,,daniellockyer (2023-10-23T09:19:11Z): Duplicate of https://github.com/TryGhost/Ghost/issues/17452 - please see the solution in there,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5zlDL9,Please merge #15989,CLOSED,NOT_PLANNED,18590.0,2023-10-12T03:05:58Z,2023-10-13T06:48:08Z,2023-10-13T05:28:09Z,https://github.com/TryGhost/Ghost/issues/18590,samiy803,,,"itsAnuga (2023-10-12T12:03:07Z): Sadly an issue with this project, it looks good on the outside, but management is kind off all over the place. | daniellockyer (2023-10-13T06:48:07Z): Duplicate of discussion in https://github.com/TryGhost/Ghost/pull/15989",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5wndNv,mail__from environment variable ignored or overridden,CLOSED,NOT_PLANNED,18047.0,2023-09-10T23:43:49Z,2023-09-17T17:55:31Z,2023-09-15T08:06:09Z,https://github.com/TryGhost/Ghost/issues/18047,gemorgan,,,"markstos (2023-09-13T20:04:57Z): (fellow Ghost user here)
+
+There are some places in the Ghost source code where `noreply@` or `ghost@` is currently used.  
+
+Also, the ""mail domain"" assumes it will match the URL, which might not always been true. See here:
+
+https://github.com/TryGhost/Ghost/blob/main/ghost/core/core/server/services/settings-helpers/SettingsHelpers.js#L86
+
+I've started to improve this area of the code with a pull request that at least merges the `ghost@` and `noreply@` cases:
+
+https://github.com/TryGhost/Ghost/pull/17966
+
+But I agree that users should also be able to override the ""mail domain"".  Besides your case of sub-domain vs top-level domain, sometimes organizations put a blog on a related domain, but what mail to go out through a relate domain. 
+
+Using `config.mail.from` in more places when it's defined seems like a logical improvement.  | daniellockyer (2023-09-15T08:06:09Z): I'm actually going to close this as a duplicate of https://github.com/TryGhost/Ghost/issues/12802 - there's a much bigger discussion going on over there | gemorgan (2023-09-17T17:55:31Z): Cool. Thanks for the pointer to main discussion.
+
+On Fri, Sep 15 2023 at 01:06:21 AM -07:00:00, Daniel Lockyer 
+***@***.***> wrote:
+> Closed #18047 <https://github.com/TryGhost/Ghost/issues/18047> as not 
+> planned.
+> 
+> —
+> Reply to this email directly, view it on GitHub 
+> <https://github.com/TryGhost/Ghost/issues/18047#event-10380414615>, 
+> or unsubscribe 
+> <https://github.com/notifications/unsubscribe-auth/AAAHMDSR2MBVEIOFGV7AIHLX2QD73ANCNFSM6AAAAAA4SP3ZUQ>.
+> You are receiving this because you authored the thread.Message ID: 
+> ***@***.***>
+> 
+
+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5vEkOv,Staff new sign ups email notifications has a wrong from email address,CLOSED,COMPLETED,17799.0,2023-08-23T14:35:03Z,2023-08-25T02:26:37Z,2023-08-25T02:26:21Z,https://github.com/TryGhost/Ghost/issues/17799,MFYDev,,,"markstos (2023-08-25T01:02:12Z): The same support request has been submitted on the Ghost Forum. I've asked the author there to delete this duplicate. 
+
+https://forum.ghost.org/t/staff-new-sign-ups-email-notifications-has-a-wrong-from-email-address/40671",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5oqioK,[iCloud mail setting] From address is not one of your addresses,CLOSED,NOT_PLANNED,17012.0,2023-06-14T03:25:09Z,2023-06-20T15:37:52Z,2023-06-20T15:37:42Z,https://github.com/TryGhost/Ghost/issues/17012,thanhpt-25,,,"markstos (2023-06-14T18:58:13Z): This does not appear to be a bug to me. Email systems require that emails be sent from a valid address to avoid email spoofing, and the order of the primary value and default ""config"" value look correct. 
+
+It seems either you need to set up `noreply` as a valid email address or use a different address.  An email address can be still be valid, yet not respond to replies. It might even bounce messages it receives.  | daniellockyer (2023-06-20T15:37:41Z): Closing as a duplicate of https://github.com/TryGhost/Ghost/issues/12802",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5kM1-J,"Code injection Site Header does not work when setting ""sodoSearch"": { ""url"": false }",CLOSED,NOT_PLANNED,16706.0,2023-04-24T11:50:28Z,2023-06-21T02:35:02Z,2023-06-15T13:46:58Z,https://github.com/TryGhost/Ghost/issues/16706,ZhelinCheng,,,"daniellockyer (2023-06-15T13:46:58Z): Closing as a duplicate of https://github.com/TryGhost/Ghost/issues/16120 | ZhelinCheng (2023-06-21T02:35:01Z): @daniellockyer I have installed the latest version, but the issue still persists.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5i-Jd-,image gallery broken when sodoSearch.url == false ,CLOSED,NOT_PLANNED,16601.0,2023-04-10T08:45:43Z,2023-04-10T11:29:30Z,2023-04-10T11:29:17Z,https://github.com/TryGhost/Ghost/issues/16601,smoebody,,,"smoebody (2023-04-10T08:59:56Z): I forgot to mention, that i disabled the sodoSearch and the portal. | daniellockyer (2023-04-10T11:29:17Z): Closing as a duplicate of https://github.com/TryGhost/Ghost/issues/16120",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5dUlXX,How to enable assets admin-auth cards on ghost 5.33.1,CLOSED,COMPLETED,16214.0,2023-02-01T08:38:15Z,2023-02-02T12:58:08Z,2023-02-02T12:57:54Z,https://github.com/TryGhost/Ghost/issues/16214,testing-88,,,"ErisDS (2023-02-02T12:57:54Z): Duplicate of https://github.com/TryGhost/Ghost/issues/14278.
+
+@monty88 you already posted on the open issue, please don't waste precious maintainer time with duplicates.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5aBtJl,Improve error message for YouTube videos that disabled embedding,CLOSED,COMPLETED,16048.0,2022-12-25T19:14:33Z,2023-05-04T23:06:04Z,2023-05-04T23:06:04Z,https://github.com/TryGhost/Ghost/issues/16048,shafy,bug,cmraible,"ErisDS (2023-01-02T19:25:53Z): Hey there, thank you so much for the detailed bug report.
+
+That does look like something that shouldn't happen! A PR to fix this issue would be very welcome 🙂 | shafy (2023-01-03T13:28:23Z): Thanks @ErisDS ! I'm not sure I have a lot of spare time in the next weeks, so if anybody else reading this wants to swoop in, feel free! Otherwise, I'll keep it in mind and might get back to it eventually 😇 | harshmange44 (2023-01-08T12:43:59Z): @ErisDS @shafy Hey, I would like to work on this one | cmraible (2023-01-11T00:47:07Z): This issue seems to duplicate [issue 10624](https://github.com/TryGhost/Ghost/issues/10624). I traced the problem back to  [oembed-extractor](https://github.com/extractus/oembed-extractor), which Ghost uses to extract the oembed payload from the provider (in this case Youtube). The `extract(url)` function doesn't catch the error and passes the payload directly back to Ghost, which is expecting JSON but instead receives `Unauthorized` and gets confused.
+
+Opened [issue 168](https://github.com/extractus/oembed-extractor/issues/168) with oembed-extractor to see if the author can add in some error handling for this case — [issue 39](https://github.com/extractus/oembed-extractor/issues/39) (same issue) was previously closed because the author couldn't replicate the issue, but I've been able to reliably replicate it with the Youtube URL linked above so hopefully should be able to get it resolved this time. | cmraible (2023-01-18T16:24:19Z): Status update: PR is ready and approved to merge, but we want to be careful with deployment/rollout.
+
+Last time we updated the `oembed-parser` package in Pro (~1 year ago), it created a lot of 422 errors. Since we are again trying to upgrade the `oembed-parser` package again, we want to carefully deploy this to a subset of Pro users, monitor and if successful, then deploy more widely. As such, we are waiting on the right timing to do this merge so that we have a little time to babysit this rollout.  | cmraible (2023-05-04T23:06:04Z): New error message: 
+<img width=""761"" alt=""CleanShot 2023-05-04 at 16 05 37@2x"" src=""https://user-images.githubusercontent.com/5412422/236348512-e72a8afa-4e15-42ea-8175-990c7c774675.png"">
+
+Fixed with this commit: https://github.com/TryGhost/Ghost/commit/27e4523aec3790d2280fbc267d178e145f8b9079",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5WOAyt,Load error of posts in admin backend since version `5.21.0`,CLOSED,COMPLETED,15813.0,2022-11-12T16:25:05Z,2022-11-14T17:33:06Z,2022-11-14T17:32:54Z,https://github.com/TryGhost/Ghost/issues/15813,SimJoSt,,,"gllmhyt (2022-11-13T11:22:54Z): Same error with more or less the same configuration. Website is unusable after a few updates and could lead to serious downtime if we have to rollback all the way to the mentionned version | KazaiMazai (2022-11-13T15:25:17Z): Hey! 
+Have a look at this issue: https://github.com/TryGhost/Ghost/issues/15806
+It might be a solution for you  | ErisDS (2022-11-14T17:32:54Z): Duplicate of #15729 / #15806 - You're using an unsupported database. Ghost 5.0 only supports MySQL 8 as documented here: https://ghost.org/docs/changes/#ghost-50",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5Vhw91,Migration update from 5.17.1 to 5.22.4 failed,CLOSED,COMPLETED,15766.0,2022-11-03T16:06:09Z,2022-11-03T16:59:52Z,2022-11-03T16:58:57Z,https://github.com/TryGhost/Ghost/issues/15766,Zagur,,,ErisDS (2022-11-03T16:58:57Z): Duplicate of https://github.com/TryGhost/Ghost/issues/15743 - you also need to upgrade mysql to v8 as Ghost v5 does not support mysql 5. ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Duplicate
+I_kwDOAJZX9s5VTedv,Migration failed update from 5.19.3 to 5.22.1,CLOSED,NOT_PLANNED,15743.0,2022-11-01T09:59:34Z,2023-03-11T18:04:43Z,2023-03-11T18:04:43Z,https://github.com/TryGhost/Ghost/issues/15743,nik-nazarov,"help wanted, stale",,"ErisDS (2022-11-01T22:21:03Z): Please can you connect to your DB and run `SELECT @@sql_mode` and share the output?  | github-actions (2022-11-01T22:21:19Z): Note from our bot: The `needs info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | nik-nazarov (2022-11-02T08:23:27Z): Hi @ErisDS, sure
+
+```sql
+NO_ENGINE_SUBSTITUTION
+``` | ErisDS (2022-11-02T10:17:12Z): > The default SQL mode in MySQL 8.0 includes these modes: [ONLY_FULL_GROUP_BY](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_only_full_group_by), [STRICT_TRANS_TABLES](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_strict_trans_tables), [NO_ZERO_IN_DATE](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_zero_in_date), [NO_ZERO_DATE](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_zero_date), [ERROR_FOR_DIVISION_BY_ZERO](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_error_for_division_by_zero), and [NO_ENGINE_SUBSTITUTION](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_engine_substitution).
+- From https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
+
+Ghost expects the default sql mode, and **requires** STRICT_TRANS_TABLES
+
+I'll leave this open for the time being to:
+
+1. Get this documented
+2. Look at catching these errors and instead throwing something more specific like ""Incorrect SQL Mode, STRICT_TRANS_TABLES is required.
+
+If anyone would like to take on 2 that would be awesome. | nik-nazarov (2022-11-02T10:39:38Z): @ErisDS thank you for your reply, I've just update sql_mode to default value and now it works! | samrap (2022-11-02T19:34:33Z): @ErisDS @nik-nazarov  can you clarify what actually needs to be done here? 
+
+Our database is on RDS and I can't set the global sql mode. Have to pin to version 5.19.3 for the time being.  | nik-nazarov (2022-11-02T22:57:25Z): @samrap sure, you need to update sql_mode parameter in parameters groups that is attached to your RDS instance. 
+for example via UI or you can do it by terraform or another IaC tool
+![image](https://user-images.githubusercontent.com/86673860/199617886-3695fc37-4901-4ea6-aeee-57736ba950f4.png)
+
+PS: value for sql_mode:
+```shell
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+```
+ | samrap (2022-11-04T02:31:24Z): @nik-nazarov Brilliant! Thank you | danquack (2022-11-04T13:41:42Z): There was a foreign key relationship on the products table:
+```
+SELECT TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME FROM   INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE   REFERENCED_TABLE_SCHEMA = 'ghost'; 
+
+...
+| subscriptions                          | tier_id           | subscriptions_tier_id_foreign                               | products                               | id                     |
+```
+
+Where the product table had the key as NOT NULL:
+```
+show create table products;
+CREATE TABLE `products` (
+  `id` varchar(24) NOT NULL,
+  ...
+```
+
+To fix this I disabled the foreign key check and then altered the table:
+```
+mysql> SET FOREIGN_KEY_CHECKS = 0;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>  alter table `subscriptions` modify  `tier_id` varchar(24) not null;
+Query OK, 0 rows affected (0.22 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SET FOREIGN_KEY_CHECKS = 1;
+Query OK, 0 rows affected (0.07 sec)
+```
+
+It appears this is the commit that caused the change https://github.com/TryGhost/Ghost/commit/3858f255b9f6a0fa8e65f73959adf1682c4b129e, not sure how the schema migrations are validated, but this at least can get folks up and running until a patch goes in.
+
+ | ErisDS (2022-11-04T17:30:58Z): @danquack to be transparent I've hidden your comment as your approach to fixing this is a hack around the problem. There is not going to be a patch to change Ghost to use a non-default SQL mode.  
+
+The docs have now been updated: https://ghost.org/docs/faq/troubleshooting-mysql-database/#error-er_fk_column_cannot_change
+
+If anyone wants to take on the work of improving the error message for these cases to make the error clearer and point to the docs, that'd be great as this issue only affects self-hosters who have a non-default SQL mode & I understand it can be difficult to find the source of the problem from the current error.
+ | github-actions (2023-03-04T18:04:35Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,Duplicate

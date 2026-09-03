@@ -1,0 +1,1528 @@
+ID,Title,State,State Reason,Number,Created At,Updated At,Closed At,URL,Author,Labels,Assignees,Comments,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24,Unnamed: 25,Unnamed: 26,Unnamed: 27,Unnamed: 28,Unnamed: 29,Unnamed: 30,Unnamed: 31,Unnamed: 32,Unnamed: 33,Unnamed: 34,Unnamed: 35,Unnamed: 36,Unnamed: 37,Unnamed: 38,Unnamed: 39,Unnamed: 40,Unnamed: 41,Unnamed: 42,Unnamed: 43,Unnamed: 44,Unnamed: 45,Unnamed: 46,Unnamed: 47,Unnamed: 48,Unnamed: 49,Unnamed: 50,Unnamed: 51,Unnamed: 52,Unnamed: 53,Unnamed: 54,Unnamed: 55,Unnamed: 56,Unnamed: 57,Unnamed: 58,Unnamed: 59,Unnamed: 60,Unnamed: 61,Unnamed: 62,Unnamed: 63,Unnamed: 64,Unnamed: 65,Unnamed: 66,Unnamed: 67,Unnamed: 68,Unnamed: 69,Unnamed: 70,Unnamed: 71,Unnamed: 72,Unnamed: 73,Unnamed: 74,Unnamed: 75,Unnamed: 76,Unnamed: 77,Unnamed: 78,Unnamed: 79,Unnamed: 80,Unnamed: 81,Unnamed: 82,Unnamed: 83,Unnamed: 84,Unnamed: 85,Unnamed: 86,Unnamed: 87,Unnamed: 88,Unnamed: 89,Unnamed: 90,Unnamed: 91,Unnamed: 92,Unnamed: 93,Unnamed: 94,Unnamed: 95,Unnamed: 96,Unnamed: 97,Unnamed: 98,Unnamed: 99,Unnamed: 100,Unnamed: 101,Unnamed: 102,Unnamed: 103,0,0.1,0.2,24,Comments and Title,Keyword Match
+I_kwDOAJZX9s6dYE_h,"Dynamic routing accepts only YAML, but not YML",CLOSED,COMPLETED,21560.0,2024-11-07T08:59:07Z,2024-12-11T14:16:35Z,2024-12-11T14:16:35Z,https://github.com/TryGhost/Ghost/issues/21560,sm-samax,,,"vikaspotluri123 (2024-11-07T16:23:56Z): From your title, this is by design, but from your description, there might be a bug/docs issue 😁 
+
+> Because the default routes in Ghost is in yml format and the common sense dictates to follow this example. It's just a small thing, but one can lose time with it.
+
+Which default routes are you referring to? | sm-samax (2024-11-08T15:00:59Z): I see now that in the docker image it's indeed `yaml`. I copied the `routes.yml` from `/content/settings/` of a localy installed ghost instance and it caused the confusion.
+
+Thank you for the feedback. :)",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"vikaspotluri123 (2024-11-07T16:23:56Z): From your title, this is by design, but from your description, there might be a bug/docs issue 😁 
+
+> Because the default routes in Ghost is in yml format and the common sense dictates to follow this example. It's just a small thing, but one can lose time with it.
+
+Which default routes are you referring to? | sm-samax (2024-11-08T15:00:59Z): I see now that in the docker image it's indeed `yaml`. I copied the `routes.yml` from `/content/settings/` of a localy installed ghost instance and it caused the confusion.
+
+Thank you for the feedback. :) Dynamic routing accepts only YAML, but not YML",1
+I_kwDOAJZX9s6WgJnB,Incorrect handling of German umlauts in permalink generation,CLOSED,NOT_PLANNED,21006.0,2024-09-13T14:41:07Z,2024-09-25T11:08:59Z,2024-09-17T17:13:12Z,https://github.com/TryGhost/Ghost/issues/21006,noezdev,P4 - Low,sagzy,"sagzy (2024-09-16T16:08:25Z): Hey noezdev, thanks for raising the issue! 🙂 <br><br>The letters `ä, ö, ü` are not translated automatically to the German-equivalent `ae, oe, ue` as this would be incorrect for other languages that also make use of the same letters (e.g. Swedish, Finnish, Estonian, Turkish).<br><br>Instead, we recommend choosing the right permalink for your post by updating the permalink in the Post Settings directly (cf. demo attached).
+
+https://github.com/user-attachments/assets/269b4e18-3d52-450f-b11c-4e35192c4533
+
+<br>Hope this helps. 🙂  | noezdev (2024-09-19T09:30:45Z): Thank you for your response to my issue. I understand your point that converting special characters in the URL can be a challenge. Interestingly, this used to be the case with WordPress, but was later changed. There are a few possible solutions:
+
+* You could consider the set language of the page and adjust the conversion based on that. This way, the German rules would apply to German content.
+* Alternatively, you could create a conversion table that defines how certain special characters are converted into URLs. This would enable consistent handling across languages.
+
+Another point is that the conversion from “Ä” to “a” is also not optimal for all languages. In Swedish, for example, “ae” would be the preferred variant, not “a”. It would be great if Ghost could find a more flexible solution here that takes different languages and their particularities into account. Let me know if you have any further questions or ideas!
+
+@sagzy maybe you can re-open the issue?",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"sagzy (2024-09-16T16:08:25Z): Hey noezdev, thanks for raising the issue! 🙂 <br><br>The letters `ä, ö, ü` are not translated automatically to the German-equivalent `ae, oe, ue` as this would be incorrect for other languages that also make use of the same letters (e.g. Swedish, Finnish, Estonian, Turkish).<br><br>Instead, we recommend choosing the right permalink for your post by updating the permalink in the Post Settings directly (cf. demo attached).
+
+https://github.com/user-attachments/assets/269b4e18-3d52-450f-b11c-4e35192c4533
+
+<br>Hope this helps. 🙂  | noezdev (2024-09-19T09:30:45Z): Thank you for your response to my issue. I understand your point that converting special characters in the URL can be a challenge. Interestingly, this used to be the case with WordPress, but was later changed. There are a few possible solutions:
+
+* You could consider the set language of the page and adjust the conversion based on that. This way, the German rules would apply to German content.
+* Alternatively, you could create a conversion table that defines how certain special characters are converted into URLs. This would enable consistent handling across languages.
+
+Another point is that the conversion from “Ä” to “a” is also not optimal for all languages. In Swedish, for example, “ae” would be the preferred variant, not “a”. It would be great if Ghost could find a more flexible solution here that takes different languages and their particularities into account. Let me know if you have any further questions or ideas!
+
+@sagzy maybe you can re-open the issue? Incorrect handling of German umlauts in permalink generation",1
+I_kwDOAJZX9s6TUzSG,"Got ""Request not understood error"" after clicking the ""go to analytics"" button",CLOSED,COMPLETED,20773.0,2024-08-17T23:10:41Z,2024-12-05T02:49:57Z,2024-08-20T13:47:49Z,https://github.com/TryGhost/Ghost/issues/20773,tigerzioo,,,"9larsons (2024-08-19T21:31:20Z): Hi @tigerzioo, could you please confirm what db you are using? The last time someone brought this up, they were using MariaDB which has been unsupported for a while now. | tigerzioo (2024-08-20T02:57:42Z): Yes, I am using MariaDB. Thank you for letting me know. Actually MariaDB works pretty good on Ghost. This is the only place I see the error. Unfortunately I can only use MariaDB on this server for now. I will still use Ghost though there is one issue. I really like Ghost. Thank you all for making this good blog platform. | 9larsons (2024-08-20T13:47:49Z): Got it, glad to hear you're enjoying it! I'm not aware of any other limitations at this time with using MariaDB. | skyblaster (2024-12-04T06:51:05Z): I'm seeing this issue and also using MariaDB (11.5.2) with Ghost 5.94 thru 5.103.
+
+When I click https://example.com/ghost/#/posts/analytics/674a5ec52c30890001333135/
+
+I can see the URL it's trying to access is: https://example.com/ghost/api/admin/posts/674a5ec52c30890001333135/?formats=mobiledoc%2Clexical&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.conversions%2Ccount.clicks%2Csentiment%2Ccount.positive_feedback%2Ccount.negative_feedback
+
+This results in the following:
+`{""errors"":[{""message"":""Request not understood error, cannot read post."",""context"":""Could not understand request."",""type"":""BadRequestError"",""details"":null,""property"":null,""help"":null,""code"":""ER_BAD_FIELD_ERROR"",""id"":""d7c4e670-b209-11ef-944a-f52ba402cf28"",""ghostErrorCode"":null}]}`
+
+If I remove `%2Ccount.conversions` then I get a proper response:
+https://example.com/ghost/api/admin/posts/674a5ec52c30890001333135/?formats=mobiledoc%2Clexical&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Csentiment%2Ccount.positive_feedback%2Ccount.negative_feedback
+
+Is this a common result of using MariaDB, or could it be due to a lack of a ""count.conversions"" field?
+
+EDIT: I see in my development mode instance that sqlite3 is able to serve a response with `%2Ccount.conversions`  without error, so I think I've found my answer and will switch to MySQL.
+
+EDIT2: Switching indeed fixed this issue.
+I followed this post: https://forum.ghost.org/t/how-to-migrate-from-mariadb-10-to-mysql-8/29575/5
+And had to fix collation with `sed -i 's/utf8mb4_uca1400_ai_ci/utf8mb4_0900_ai_ci/g' dump.sql`
+
+Thanks!
+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"9larsons (2024-08-19T21:31:20Z): Hi @tigerzioo, could you please confirm what db you are using? The last time someone brought this up, they were using MariaDB which has been unsupported for a while now. | tigerzioo (2024-08-20T02:57:42Z): Yes, I am using MariaDB. Thank you for letting me know. Actually MariaDB works pretty good on Ghost. This is the only place I see the error. Unfortunately I can only use MariaDB on this server for now. I will still use Ghost though there is one issue. I really like Ghost. Thank you all for making this good blog platform. | 9larsons (2024-08-20T13:47:49Z): Got it, glad to hear you're enjoying it! I'm not aware of any other limitations at this time with using MariaDB. | skyblaster (2024-12-04T06:51:05Z): I'm seeing this issue and also using MariaDB (11.5.2) with Ghost 5.94 thru 5.103.
+
+When I click https://example.com/ghost/#/posts/analytics/674a5ec52c30890001333135/
+
+I can see the URL it's trying to access is: https://example.com/ghost/api/admin/posts/674a5ec52c30890001333135/?formats=mobiledoc%2Clexical&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.conversions%2Ccount.clicks%2Csentiment%2Ccount.positive_feedback%2Ccount.negative_feedback
+
+This results in the following:
+`{""errors"":[{""message"":""Request not understood error, cannot read post."",""context"":""Could not understand request."",""type"":""BadRequestError"",""details"":null,""property"":null,""help"":null,""code"":""ER_BAD_FIELD_ERROR"",""id"":""d7c4e670-b209-11ef-944a-f52ba402cf28"",""ghostErrorCode"":null}]}`
+
+If I remove `%2Ccount.conversions` then I get a proper response:
+https://example.com/ghost/api/admin/posts/674a5ec52c30890001333135/?formats=mobiledoc%2Clexical&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Csentiment%2Ccount.positive_feedback%2Ccount.negative_feedback
+
+Is this a common result of using MariaDB, or could it be due to a lack of a ""count.conversions"" field?
+
+EDIT: I see in my development mode instance that sqlite3 is able to serve a response with `%2Ccount.conversions`  without error, so I think I've found my answer and will switch to MySQL.
+
+EDIT2: Switching indeed fixed this issue.
+I followed this post: https://forum.ghost.org/t/how-to-migrate-from-mariadb-10-to-mysql-8/29575/5
+And had to fix collation with `sed -i 's/utf8mb4_uca1400_ai_ci/utf8mb4_0900_ai_ci/g' dump.sql`
+
+Thanks!
+ Got ""Request not understood error"" after clicking the ""go to analytics"" button",1
+I_kwDOAJZX9s6TT4lM,Opening the recommendation popup only works with enabled subscription,CLOSED,COMPLETED,20771.0,2024-08-17T10:12:55Z,2024-10-23T07:49:11Z,2024-10-23T07:49:11Z,https://github.com/TryGhost/Ghost/issues/20771,SteffoSpieler,,allouis,"allouis (2024-08-26T07:18:27Z): I'm not able to replicate the issue with these instructions, is this with a fresh install of Ghost? If you could share reproduction steps using the latest version of Ghost & the Ghost CLI, that would be really helpful! 
+
+I also noticed that you're installing with Docker Compose - which is not an officially supported install method, it's unlikely to be the cause, but to rule it out, could you try replicating with the recommended installation methods instead?   | SteffoSpieler (2024-08-26T07:48:04Z): I just tried it with the ghost-cli and I am able to reproduce the bug with the specified instructions:
+
+![gif](https://github.com/user-attachments/assets/b014afce-5264-4e18-86c5-0167502eb08e)
+
+This is on a fresh (local) install of ghost, having only done the initial setup, and then done the instructions from above. | allouis (2024-08-26T07:51:39Z): Thanks! I will look into this further! | cathysarisky (2024-10-08T01:21:06Z): I'm able to confirm the behavior also, on 5.96.0.  Huh. No, hang on.  
+Started the site, turned on 'nobody' can subscribe.  No recommendations pop up.  Instead I got the payment page (choose a plan)
+Realized I didn't actually have recommendations.  Oops.  So I added one.  Then it came up as expected.
+I deleted it (because why not?), and then I got this:
+![image](https://github.com/user-attachments/assets/4b101a34-5724-4d27-af06-9d3587d77cef)
+
+So... I think that the weird behavior maybe only happens if there are no recommendations?  @SteffoSpieler, can you check if the site you're testing with actually has any recommendations added?
+
+(That error is clearly not right - nor is getting sent to the payment page, but it seems to be an error on trying to access recommendations while there are none, or at least, that's the only way I could trigger it...) | SteffoSpieler (2024-10-08T05:18:50Z): @cathysarisky As you can see in my demonstration above, I have recommendations. | cathysarisky (2024-10-17T19:58:24Z): It's a little hard to tell - are you reloading the page after setting the recommendation? | SteffoSpieler (2024-10-18T13:22:21Z): Yes, I am. If not, then the recommendations wouldn't show in the sidebar as well.
+If you need a live example, I could send my blog here, as there I have membership disabled, but I have recommendations set - and the popup doesn't open. (Don't want to accidentally advertise if that's not allowed / not needed anyway.) | cathysarisky (2024-10-18T13:27:00Z): Let me see if I can repro this again.  I found one error in the routing for recommendations, but I'm not sure I fully reproduced this case.
+
+Update - @SteffoSpieler , I've tried exactly what you described, but am not able to replicate.  So yes, please, link your site! :)  | SteffoSpieler (2024-10-18T21:36:33Z): I just replicated with a fresh local installation of ghost, like it's explained in the README of this repository (`ghost install local`). Here you can see the full replication: 
+
+https://github.com/user-attachments/assets/40a6c2e5-97f5-4318-b527-831fcbdc0d7b
+
+You can also test this setup on my blog - https://steffo.blog - it's the same settings. The only difference is that I use the (not official) docker image to host this - but this shouldn't be an issue, as it's the same ghost technically, I think. (Also, I can still reproduce it locally.) | cathysarisky (2024-10-18T22:17:24Z): Ah. Interesting.  Your site doesn't appear to be loading the portal script, which does all the membership functionality AND recommendations. 
+
+Looks like the bug is here:
+```
+    if (!settingsCache.get('members_enabled') && !settingsCache.get('donations_enabled')) {
+
+```
+(ghost_head.js, line 49).  That's preventing the portal script from loading recommendations.
+
+Thanks for your patience on sorting out the repro.  I now see that the portal script is completely failing to load, which is why that button is not doing anything.  Will patch!
+
+I suspect that it was hard to replicate earlier because things get cached...?  Weird.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"allouis (2024-08-26T07:18:27Z): I'm not able to replicate the issue with these instructions, is this with a fresh install of Ghost? If you could share reproduction steps using the latest version of Ghost & the Ghost CLI, that would be really helpful! 
+
+I also noticed that you're installing with Docker Compose - which is not an officially supported install method, it's unlikely to be the cause, but to rule it out, could you try replicating with the recommended installation methods instead?   | SteffoSpieler (2024-08-26T07:48:04Z): I just tried it with the ghost-cli and I am able to reproduce the bug with the specified instructions:
+
+![gif](https://github.com/user-attachments/assets/b014afce-5264-4e18-86c5-0167502eb08e)
+
+This is on a fresh (local) install of ghost, having only done the initial setup, and then done the instructions from above. | allouis (2024-08-26T07:51:39Z): Thanks! I will look into this further! | cathysarisky (2024-10-08T01:21:06Z): I'm able to confirm the behavior also, on 5.96.0.  Huh. No, hang on.  
+Started the site, turned on 'nobody' can subscribe.  No recommendations pop up.  Instead I got the payment page (choose a plan)
+Realized I didn't actually have recommendations.  Oops.  So I added one.  Then it came up as expected.
+I deleted it (because why not?), and then I got this:
+![image](https://github.com/user-attachments/assets/4b101a34-5724-4d27-af06-9d3587d77cef)
+
+So... I think that the weird behavior maybe only happens if there are no recommendations?  @SteffoSpieler, can you check if the site you're testing with actually has any recommendations added?
+
+(That error is clearly not right - nor is getting sent to the payment page, but it seems to be an error on trying to access recommendations while there are none, or at least, that's the only way I could trigger it...) | SteffoSpieler (2024-10-08T05:18:50Z): @cathysarisky As you can see in my demonstration above, I have recommendations. | cathysarisky (2024-10-17T19:58:24Z): It's a little hard to tell - are you reloading the page after setting the recommendation? | SteffoSpieler (2024-10-18T13:22:21Z): Yes, I am. If not, then the recommendations wouldn't show in the sidebar as well.
+If you need a live example, I could send my blog here, as there I have membership disabled, but I have recommendations set - and the popup doesn't open. (Don't want to accidentally advertise if that's not allowed / not needed anyway.) | cathysarisky (2024-10-18T13:27:00Z): Let me see if I can repro this again.  I found one error in the routing for recommendations, but I'm not sure I fully reproduced this case.
+
+Update - @SteffoSpieler , I've tried exactly what you described, but am not able to replicate.  So yes, please, link your site! :)  | SteffoSpieler (2024-10-18T21:36:33Z): I just replicated with a fresh local installation of ghost, like it's explained in the README of this repository (`ghost install local`). Here you can see the full replication: 
+
+https://github.com/user-attachments/assets/40a6c2e5-97f5-4318-b527-831fcbdc0d7b
+
+You can also test this setup on my blog - https://steffo.blog - it's the same settings. The only difference is that I use the (not official) docker image to host this - but this shouldn't be an issue, as it's the same ghost technically, I think. (Also, I can still reproduce it locally.) | cathysarisky (2024-10-18T22:17:24Z): Ah. Interesting.  Your site doesn't appear to be loading the portal script, which does all the membership functionality AND recommendations. 
+
+Looks like the bug is here:
+```
+    if (!settingsCache.get('members_enabled') && !settingsCache.get('donations_enabled')) {
+
+```
+(ghost_head.js, line 49).  That's preventing the portal script from loading recommendations.
+
+Thanks for your patience on sorting out the repro.  I now see that the portal script is completely failing to load, which is why that button is not doing anything.  Will patch!
+
+I suspect that it was hard to replicate earlier because things get cached...?  Weird. Opening the recommendation popup only works with enabled subscription",1
+I_kwDOAJZX9s6ODjXt,outbound link tagging breaks links with a '#' in them,CLOSED,COMPLETED,20492.0,2024-07-01T09:15:38Z,2024-07-30T19:14:46Z,2024-07-30T19:14:46Z,https://github.com/TryGhost/Ghost/issues/20492,halphalp,needs:info,cmraible,"vikaspotluri123 (2024-07-01T15:20:29Z): Can you share an example? That sounds like the correct behavior | cmraible (2024-07-04T22:44:07Z): @halphalp I agree that this seems like the correct behavior. Can you please share an example link that is broken because of the outbound tag? | github-actions (2024-07-04T22:44:25Z): Note from our bot: The `needs:info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | cmraible (2024-07-30T19:14:46Z): Closing this issue as we don't have enough information to evaluate if this is a bug or expected behavior. If you can share an example link, feel free to open again.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"vikaspotluri123 (2024-07-01T15:20:29Z): Can you share an example? That sounds like the correct behavior | cmraible (2024-07-04T22:44:07Z): @halphalp I agree that this seems like the correct behavior. Can you please share an example link that is broken because of the outbound tag? | github-actions (2024-07-04T22:44:25Z): Note from our bot: The `needs:info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | cmraible (2024-07-30T19:14:46Z): Closing this issue as we don't have enough information to evaluate if this is a bug or expected behavior. If you can share an example link, feel free to open again. outbound link tagging breaks links with a '#' in them",1
+I_kwDOAJZX9s6MaBLX,Editor formatting broken,CLOSED,COMPLETED,20391.0,2024-06-16T09:59:00Z,2024-08-15T22:01:49Z,2024-08-15T22:01:48Z,https://github.com/TryGhost/Ghost/issues/20391,yohanderose,needs:info,kevinansfield,"kevinansfield (2024-06-17T09:30:57Z): @yohanderose I'm a bit confused as to what versions etc you're using here. Ghost hasn't had a ""beta"" editor since 5.68.0 released Oct 6th 2023 in which the old editor and beta switch was removed entirely.
+
+Are you saying you have content that you created/edited in the beta editor in an old version of Ghost that is now broken in the latest release? (Note that once you edited a post in the beta editor it wasn't possible to revert it to the old editor, even after disabling the beta switch). | yohanderose (2024-06-18T14:36:03Z): @kevinansfield, thanks for replying. I didn't actually edit anything in the beta editor; I just wanted to check out the feature.
+
+I was self-hosting an old docker image on a VPS, and even once I upgraded to the latest, the weird formatting persisted, and applying any bold or italics isn't working.
+![Peek 2024-06-18 21-32](https://github.com/TryGhost/Ghost/assets/38681260/bbeb1d85-70c1-41e5-bc3d-1526b41a64ff)
+ | kevinansfield (2024-06-20T16:54:57Z): Is this occurring on every post or just with specific content? | yohanderose (2024-06-20T17:08:27Z): Every post it looks like | kevinansfield (2024-06-20T17:28:13Z): In that case it sounds like there's something in your browser may be interfering with the editor. When you preview or view the published post is the content there italicised? | yohanderose (2024-06-20T17:53:34Z): Hmm, that's weird. I've tried Firefox and Chrome, and they have the same issue. The previews and live posts look [fine](https://yohanderose.dev/nabunote-devlog-1/) 
+
+Just tried disabling all extensions as well but no change | kevinansfield (2024-06-24T12:04:07Z): Can you use the browser's dev tools to inspect some of the italicised text and post a screenshot of the elements tab? | ngeorger (2024-06-25T03:08:25Z): Just a reccomendation: When you upograde any software, even more if it's important for you, try to do it stepby step,minor version by minor version until you get to the latest or desired one.
+
+Example:
+
+If you are un 4.0.0, don't jump directly into 5.xx.x, do it at least with a couple of versions in between, like 4.0 -> to 4.5 -> 4.9 -> 5.0
+
+This way you'll ensure the lowest chances of breaking changes when upgrading. | ngeorger (2024-06-25T03:10:56Z): BTW, you could try to export and import your content. There is a chance that migrations or database upgrades did something weird at some point.
+BTW, do it into a dev environment, not directly into your main server. | github-actions (2024-07-17T14:59:14Z): Note from our bot: The `needs:info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | cmraible (2024-08-15T22:01:49Z): Hey @yohanderose  👋 
+
+Our team needed some more info to get to the bottom of this, however we've not heard back from you. We're going to close this for now, but let us know if you manage to dig up some more info and we'll reopen.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"kevinansfield (2024-06-17T09:30:57Z): @yohanderose I'm a bit confused as to what versions etc you're using here. Ghost hasn't had a ""beta"" editor since 5.68.0 released Oct 6th 2023 in which the old editor and beta switch was removed entirely.
+
+Are you saying you have content that you created/edited in the beta editor in an old version of Ghost that is now broken in the latest release? (Note that once you edited a post in the beta editor it wasn't possible to revert it to the old editor, even after disabling the beta switch). | yohanderose (2024-06-18T14:36:03Z): @kevinansfield, thanks for replying. I didn't actually edit anything in the beta editor; I just wanted to check out the feature.
+
+I was self-hosting an old docker image on a VPS, and even once I upgraded to the latest, the weird formatting persisted, and applying any bold or italics isn't working.
+![Peek 2024-06-18 21-32](https://github.com/TryGhost/Ghost/assets/38681260/bbeb1d85-70c1-41e5-bc3d-1526b41a64ff)
+ | kevinansfield (2024-06-20T16:54:57Z): Is this occurring on every post or just with specific content? | yohanderose (2024-06-20T17:08:27Z): Every post it looks like | kevinansfield (2024-06-20T17:28:13Z): In that case it sounds like there's something in your browser may be interfering with the editor. When you preview or view the published post is the content there italicised? | yohanderose (2024-06-20T17:53:34Z): Hmm, that's weird. I've tried Firefox and Chrome, and they have the same issue. The previews and live posts look [fine](https://yohanderose.dev/nabunote-devlog-1/) 
+
+Just tried disabling all extensions as well but no change | kevinansfield (2024-06-24T12:04:07Z): Can you use the browser's dev tools to inspect some of the italicised text and post a screenshot of the elements tab? | ngeorger (2024-06-25T03:08:25Z): Just a reccomendation: When you upograde any software, even more if it's important for you, try to do it stepby step,minor version by minor version until you get to the latest or desired one.
+
+Example:
+
+If you are un 4.0.0, don't jump directly into 5.xx.x, do it at least with a couple of versions in between, like 4.0 -> to 4.5 -> 4.9 -> 5.0
+
+This way you'll ensure the lowest chances of breaking changes when upgrading. | ngeorger (2024-06-25T03:10:56Z): BTW, you could try to export and import your content. There is a chance that migrations or database upgrades did something weird at some point.
+BTW, do it into a dev environment, not directly into your main server. | github-actions (2024-07-17T14:59:14Z): Note from our bot: The `needs:info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | cmraible (2024-08-15T22:01:49Z): Hey @yohanderose  👋 
+
+Our team needed some more info to get to the bottom of this, however we've not heard back from you. We're going to close this for now, but let us know if you manage to dig up some more info and we'll reopen. Editor formatting broken",1
+I_kwDOAJZX9s6EjcnG,Vulnerability Report: Regular Expression Denial of Service (ReDoS) in moment.js,CLOSED,COMPLETED,19985.0,2024-04-03T20:44:46Z,2024-04-04T19:04:43Z,2024-04-04T19:04:33Z,https://github.com/TryGhost/Ghost/issues/19985,camgrimsec,,,allouis (2024-04-04T19:04:33Z): Please report any security issues as laid out here https://ghost.org/docs/security/ and provide an example of the exploit,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,allouis (2024-04-04T19:04:33Z): Please report any security issues as laid out here https://ghost.org/docs/security/ and provide an example of the exploit Vulnerability Report: Regular Expression Denial of Service (ReDoS) in moment.js,1
+I_kwDOAJZX9s6CBGF8,"Error updating to Ghost 5.80 from 5.23, blog down, please help",CLOSED,COMPLETED,19839.0,2024-03-12T10:58:28Z,2024-12-11T12:32:21Z,2024-12-11T12:32:14Z,https://github.com/TryGhost/Ghost/issues/19839,DigitalLeaves,"P3 - Medium, OSS",,"DigitalLeaves (2024-03-12T11:23:36Z): Ok, I managed to solve it manually. The issue is in the script `2023-07-10-05-16-55-add-built-in-collection-posts.js`.
+
+Specifically, in this function:
+```
+const insertPostCollections = async (knex, collectionId, postIds) => {
+    logging.warn(`Batch inserting ${postIds.length} collection posts for collection ${collectionId}`);
+
+    const collectionPosts = postIds.map((postId) => {
+        return {
+            id: (new ObjectID()).toHexString(),
+            collection_id: collectionId,
+            post_id: postId,
+            sort_order: 0
+        };
+    });
+
+    await knex.batchInsert('collections_posts', collectionPosts, 1000);
+};
+```
+
+The problem is the batch size. I guess it does not make sense to have it set to 1000 if the maximum size for batch inserts in MySQL is 500. So lowering to 100 for example does the trick.
+
+Now, can you kindly confirm that even by reducing the batch size to 100, all posts would be updated in the database as per the new Ghost 5.80 requirements? (looking at the code, it seems that is the case, but just want to be sure).
+
+Thank you. A PR here would be quite easy I guess, just decreasing the limit to 100. | allouis (2024-10-25T08:34:08Z): In order to fix this issue we need a few things:
+
+1. A replication of the error
+2. A batchSize which fixes the error
+3. A new helper which wraps `knex.batchInsert` and forces it to use our safe batch size
+4. Updating all uses of the `knex.batchInsert` to use the new helper
+ | markstos (2024-10-25T14:53:29Z): @allouis It's possible to take a ""good now, better later"" approach here.
+
+If the PR https://github.com/TryGhost/Ghost/pull/21063 is adjusted down to use a value of 100, it will solve some known, reported case were people are running into this SQLite limit and the code quality will be no worse than the current code which hardcodes a limit of 1,000 rather than 100. That's a good solution that can help now. Per above, the value of 100 has been tested. 
+
+What you describe here is a more ideal solution with a test-suite-ready replication and a helper method. Although, the helper method will only help if people remember to use it instead of `knex.batchInsert`.
+
+An alternate path forward is to merge the PR adjusted to a batch size of 100 while also leaving this issue open for a more ideal approach later.  | allouis (2024-10-28T06:06:52Z): @markstos Absolutely! If this is still an issue for people and we have a PR that solves it - I'm happy to merge 😁
+
+FWIW I wasn't asking for a test suite replication - a manual one would have been fine - the problem is that the original PR didn't fix the issue - so I'd like to be sure that anything we merge does fix an issue!
+
+I'll reopen that PR for you now - thank you for coming back and taking an interest - it's appreciated!
+
+ | markstos (2024-11-06T13:38:45Z): This can be closed, it was resolved by #21063 in the next release after 5.99.  | ErisDS (2024-12-11T12:32:15Z): Closed by [2d5230e](https://github.com/tilak999/ghost/commit/2d5230e6a22427cd75f4443b06c75cbf29fb5604)",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"DigitalLeaves (2024-03-12T11:23:36Z): Ok, I managed to solve it manually. The issue is in the script `2023-07-10-05-16-55-add-built-in-collection-posts.js`.
+
+Specifically, in this function:
+```
+const insertPostCollections = async (knex, collectionId, postIds) => {
+    logging.warn(`Batch inserting ${postIds.length} collection posts for collection ${collectionId}`);
+
+    const collectionPosts = postIds.map((postId) => {
+        return {
+            id: (new ObjectID()).toHexString(),
+            collection_id: collectionId,
+            post_id: postId,
+            sort_order: 0
+        };
+    });
+
+    await knex.batchInsert('collections_posts', collectionPosts, 1000);
+};
+```
+
+The problem is the batch size. I guess it does not make sense to have it set to 1000 if the maximum size for batch inserts in MySQL is 500. So lowering to 100 for example does the trick.
+
+Now, can you kindly confirm that even by reducing the batch size to 100, all posts would be updated in the database as per the new Ghost 5.80 requirements? (looking at the code, it seems that is the case, but just want to be sure).
+
+Thank you. A PR here would be quite easy I guess, just decreasing the limit to 100. | allouis (2024-10-25T08:34:08Z): In order to fix this issue we need a few things:
+
+1. A replication of the error
+2. A batchSize which fixes the error
+3. A new helper which wraps `knex.batchInsert` and forces it to use our safe batch size
+4. Updating all uses of the `knex.batchInsert` to use the new helper
+ | markstos (2024-10-25T14:53:29Z): @allouis It's possible to take a ""good now, better later"" approach here.
+
+If the PR https://github.com/TryGhost/Ghost/pull/21063 is adjusted down to use a value of 100, it will solve some known, reported case were people are running into this SQLite limit and the code quality will be no worse than the current code which hardcodes a limit of 1,000 rather than 100. That's a good solution that can help now. Per above, the value of 100 has been tested. 
+
+What you describe here is a more ideal solution with a test-suite-ready replication and a helper method. Although, the helper method will only help if people remember to use it instead of `knex.batchInsert`.
+
+An alternate path forward is to merge the PR adjusted to a batch size of 100 while also leaving this issue open for a more ideal approach later.  | allouis (2024-10-28T06:06:52Z): @markstos Absolutely! If this is still an issue for people and we have a PR that solves it - I'm happy to merge 😁
+
+FWIW I wasn't asking for a test suite replication - a manual one would have been fine - the problem is that the original PR didn't fix the issue - so I'd like to be sure that anything we merge does fix an issue!
+
+I'll reopen that PR for you now - thank you for coming back and taking an interest - it's appreciated!
+
+ | markstos (2024-11-06T13:38:45Z): This can be closed, it was resolved by #21063 in the next release after 5.99.  | ErisDS (2024-12-11T12:32:15Z): Closed by [2d5230e](https://github.com/tilak999/ghost/commit/2d5230e6a22427cd75f4443b06c75cbf29fb5604) Error updating to Ghost 5.80 from 5.23, blog down, please help",1
+I_kwDOAJZX9s5-KshI,It is not possible to configure the email if the Newsletter is deactivated,CLOSED,NOT_PLANNED,19647.0,2024-02-03T23:55:19Z,2024-03-04T12:12:05Z,2024-03-04T12:11:42Z,https://github.com/TryGhost/Ghost/issues/19647,app/,,daniellockyer,"sagzy (2024-03-04T12:11:42Z): Hey, thank you for raising the issue and apologies for the late reply.
+
+To send transactional emails, there is no need for the Newsletter feature to be activated. The SMTP settings can be added to Ghost via the config file `config.production.json`, as explained in the public documentation: https://ghost.org/docs/config/#mail
+
+For example, with Mailgun:
+```
+// config.production.json
+
+""mail"": {
+  ""from"": ""hello@james.com"",
+  ""transport"": ""SMTP"",
+  ""options"": {
+    ""service"": ""Mailgun"",
+    ""auth"": {
+      ""user"": ""postmaster@example.mailgun.org"",
+      ""pass"": ""1234567890""
+    }
+  }
+},
+```
+
+After doing so, if a staff member forgets their password, they can click on ""Forgot"" on the login screen and will receive a password reset email.
+
+Hope this helps!",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"sagzy (2024-03-04T12:11:42Z): Hey, thank you for raising the issue and apologies for the late reply.
+
+To send transactional emails, there is no need for the Newsletter feature to be activated. The SMTP settings can be added to Ghost via the config file `config.production.json`, as explained in the public documentation: https://ghost.org/docs/config/#mail
+
+For example, with Mailgun:
+```
+// config.production.json
+
+""mail"": {
+  ""from"": ""hello@james.com"",
+  ""transport"": ""SMTP"",
+  ""options"": {
+    ""service"": ""Mailgun"",
+    ""auth"": {
+      ""user"": ""postmaster@example.mailgun.org"",
+      ""pass"": ""1234567890""
+    }
+  }
+},
+```
+
+After doing so, if a staff member forgets their password, they can click on ""Forgot"" on the login screen and will receive a password reset email.
+
+Hope this helps! It is not possible to configure the email if the Newsletter is deactivated",1
+I_kwDOAJZX9s52kK_W,Lexical kg-cards missing on website after ghost update with zip,CLOSED,COMPLETED,18948.0,2023-11-12T01:51:23Z,2024-05-21T13:46:38Z,2024-05-21T13:46:28Z,https://github.com/TryGhost/Ghost/issues/18948,ASAMedia,,,"ASAMedia (2023-11-12T01:58:12Z): An example from the website I'm running ([lyonel-feininger-gymnasium.de](https://lyonel-feininger-gymnasium.de/)):
+It looks like this in the editor 
+![grafik](https://github.com/TryGhost/Ghost/assets/41484117/7ae64619-aebd-4858-9ba6-d02f542bfb20)
+
+and like this on the website
+![grafik](https://github.com/TryGhost/Ghost/assets/41484117/24c11f2b-89c2-4684-a15c-4d9cb95450bc)
+
+As you can see, the snow picture is nowhere to be seen. 
+ | ASAMedia (2023-11-12T14:29:06Z): Ok, I've got some more information:
+I looked into the db and found that the images are against my previous claims in fact are NOT present in the lexical field of the post
+
+Here is the code snippet from the working original docker version
+```
+ receive emails when new content is publishrfed!</p><figure class=""kg-card kg-image-card kg-width-wide""><img src=""__GHOST_URL__/content/images/2023/11/IMG_2658.jpeg"" class=""kg-image"" alt="""" loading=""lazy"" width=""2000"" height=""1500"" srcset=""__GHOST_URL__/content/images/size/w600/2023/11/IMG_2658.jpeg 600w, __GHOST_URL__/content/images/size/w1000/2023/11/IMG_2658.jpeg 1000w, __GHOST_URL__/content/images/size/w1600/2023/11/IMG_2658.jpeg 1600w, __GHOST_URL__/content/images/2023/11/IMG_2658.jpeg 2000w"" sizes=""(min-width: 1200px) 1200px""></figure><figure class=""kg-card kg-image-card""><img src=""__GHOST_URL__/content/images/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png"" class=""kg-image"" alt="""" loading=""lazy"" width=""1920"" height=""673"" srcset=""__GHOST_URL__/content/images/size/w600/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 600w, __GHOST_URL__/content/images/size/w1000/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1000w, __GHOST_URL__/content/images/size/w1600/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1600w, __GHOST_URL__/content/images/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1920w"" sizes=""(min-width: 720px) 720px""></figure><hr>
+```
+And here the one I'm getting with my updated version inside docker
+```
+ receive emails when new content is publishrfed!</p>
+```
+
+**Now the question where does this go wrong?** | ASAMedia (2023-11-12T21:52:42Z): Another Update:
+I downloaded the original source files from [5.71.2](https://github.com/TryGhost/Ghost/releases/tag/v5.71.2) build them to an archive with `yarn archive` and used the resulting [ghost-5.71.2.tgz.zip](https://github.com/TryGhost/Ghost/files/13329268/ghost-5.71.2.tgz.zip) to update the ghost 5.71.0-alpine docker.
+
+Result: 
+The problem is still occuring the same way as before :(
+
+So it seems like in the build or update process the reference to the js for the kg-cards/nodes goes missing.
+I will attach some log info below, where the missing functions/attr are named when clicking the save/update button in the lexical-editor:
+<details>
+<summary>log output</summary>
+<br>
+<code>
+lfg-ghost    | CodeBlockNode must implement static ""getType"" method
+lfg-ghost    | CodeBlockNode must implement static ""clone"" method
+lfg-ghost    | CodeBlockNode must implement ""decorate"" method
+lfg-ghost    | CodeBlockNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CodeBlockNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ImageNode must implement static ""getType"" method
+lfg-ghost    | ImageNode must implement static ""clone"" method
+lfg-ghost    | ImageNode must implement ""decorate"" method
+lfg-ghost    | ImageNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | MarkdownNode must implement static ""getType"" method
+lfg-ghost    | MarkdownNode must implement static ""clone"" method
+lfg-ghost    | MarkdownNode must implement ""decorate"" method
+lfg-ghost    | MarkdownNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | MarkdownNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | VideoNode must implement static ""getType"" method
+lfg-ghost    | VideoNode must implement static ""clone"" method
+lfg-ghost    | VideoNode must implement ""decorate"" method
+lfg-ghost    | VideoNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | AudioNode must implement static ""getType"" method
+lfg-ghost    | AudioNode must implement static ""clone"" method
+lfg-ghost    | AudioNode must implement ""decorate"" method
+lfg-ghost    | AudioNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | AudioNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CalloutNode must implement static ""getType"" method
+lfg-ghost    | CalloutNode must implement static ""clone"" method
+lfg-ghost    | CalloutNode must implement ""decorate"" method
+lfg-ghost    | CalloutNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CalloutNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HorizontalRuleNode must implement static ""getType"" method
+lfg-ghost    | HorizontalRuleNode must implement static ""clone"" method
+lfg-ghost    | HorizontalRuleNode must implement ""decorate"" method
+lfg-ghost    | HorizontalRuleNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HorizontalRuleNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HtmlNode must implement static ""getType"" method
+lfg-ghost    | HtmlNode must implement static ""clone"" method
+lfg-ghost    | HtmlNode must implement ""decorate"" method
+lfg-ghost    | HtmlNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HtmlNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | FileNode must implement static ""getType"" method
+lfg-ghost    | FileNode must implement static ""clone"" method
+lfg-ghost    | FileNode must implement ""decorate"" method
+lfg-ghost    | FileNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ToggleNode must implement static ""getType"" method
+lfg-ghost    | ToggleNode must implement static ""clone"" method
+lfg-ghost    | ToggleNode must implement ""decorate"" method
+lfg-ghost    | ToggleNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ToggleNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ButtonNode must implement static ""getType"" method
+lfg-ghost    | ButtonNode must implement static ""clone"" method
+lfg-ghost    | ButtonNode must implement ""decorate"" method
+lfg-ghost    | ButtonNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ButtonNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HeaderNode must implement static ""getType"" method
+lfg-ghost    | HeaderNode must implement static ""clone"" method
+lfg-ghost    | HeaderNode must implement ""decorate"" method
+lfg-ghost    | HeaderNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HeaderNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | BookmarkNode must implement static ""getType"" method
+lfg-ghost    | BookmarkNode must implement static ""clone"" method
+lfg-ghost    | BookmarkNode must implement ""decorate"" method
+lfg-ghost    | PaywallNode must implement static ""getType"" method
+lfg-ghost    | PaywallNode must implement static ""clone"" method
+lfg-ghost    | PaywallNode must implement ""decorate"" method
+lfg-ghost    | PaywallNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | PaywallNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ProductNode must implement static ""getType"" method
+lfg-ghost    | ProductNode must implement static ""clone"" method
+lfg-ghost    | ProductNode must implement ""decorate"" method
+lfg-ghost    | ProductNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmbedNode must implement static ""getType"" method
+lfg-ghost    | EmbedNode must implement static ""clone"" method
+lfg-ghost    | EmbedNode must implement ""decorate"" method
+lfg-ghost    | EmbedNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmbedNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailNode must implement static ""getType"" method
+lfg-ghost    | EmailNode must implement static ""clone"" method
+lfg-ghost    | EmailNode must implement ""decorate"" method
+lfg-ghost    | EmailNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | GalleryNode must implement static ""getType"" method
+lfg-ghost    | GalleryNode must implement static ""clone"" method
+lfg-ghost    | GalleryNode must implement ""decorate"" method
+lfg-ghost    | GalleryNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | GalleryNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailCtaNode must implement static ""getType"" method
+lfg-ghost    | EmailCtaNode must implement static ""clone"" method
+lfg-ghost    | EmailCtaNode must implement ""decorate"" method
+lfg-ghost    | EmailCtaNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailCtaNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | SignupNode must implement static ""getType"" method
+lfg-ghost    | SignupNode must implement static ""clone"" method
+lfg-ghost    | SignupNode must implement ""decorate"" method
+lfg-ghost    | SignupNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | SignupNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CollectionNode must implement static ""getType"" method
+lfg-ghost    | CollectionNode must implement static ""clone"" method
+lfg-ghost    | CollectionNode must implement ""decorate"" method
+lfg-ghost    | CollectionNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CollectionNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | [2023-11-12 21:53:13] INFO Adding one-off job to queue with current length = 0 called 'sendWebmentions'
+lfg-ghost    | [2023-11-12 21:53:13] INFO ""PUT /ghost/api/admin/posts/654ff84b2fecd90001949776/?formats=mobiledoc%2Clexical&save_revision=1&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Cpost_revisions%2Cpost_revisions.author"" 200 133ms
+
+</code>
+</details> | sergiosgc (2023-11-28T18:17:26Z): Something in the build system is broken. I build my docker instance similar to how you do it, and since 5.71.0, at least, I get two `kg-default-nodes` modules, one in `ghost/node_modules/@tryghost` and one in `ghost/ghost/core/node_modules/@tryghost`. Removing `ghost/ghost/core/node_modules` fixes the issue.
+
+The duplicate module import creates two definitions of [KoenigDecoratorNode](https://github.com/TryGhost/Koenig/blob/d472dd6f74d5123edb202a51317cb42004e44a13/packages/kg-default-nodes/lib/KoenigDecoratorNode.js). This causes the `instanceof` test in `$isKoenigCard` to fail, which causes [`exportTopLevelElementOrDecorator`](https://github.com/TryGhost/Koenig/blob/d472dd6f74d5123edb202a51317cb42004e44a13/packages/kg-lexical-html-renderer/lib/convert-to-html-string.js#L37) to fail on elements where `$isKoenigCard` should return true but returns false (Images and Cards, at least).
+
+I know very little about Ghost's build system, but someone with more knowledge than me should be able to fix this fairly quickly.
+
+The official images do not exhibit this problem. They may be building ghost differently. | ASAMedia (2023-11-29T16:05:04Z): Wow great! Thanks @sergiosgc
+That will solve the issue till a fix is implemented. 
+
+Looks like `kg-default-nodes` is imported here `""@tryghost/kg-default-nodes"": ""0.2.9"",` in the [ghost/core/package.json](https://github.com/TryGhost/Ghost/blob/main/ghost/core/package.json#L105) 
+and 
+here `const {DEFAULT_NODES} = require('@tryghost/kg-default-nodes');` in the [ghost/core/core/server/lib/lexical.js](https://github.com/TryGhost/Ghost/blob/8fc6fef1685f216eef8eece40c3a38d7225beeb8/ghost/core/core/server/lib/lexical.js#L14)
+
+When I delete the line in the `package.json` and build, everything works as expected.
+
+Maybe this could be a valid **fix**? | hsarji (2023-12-17T15:03:22Z): This problem seems to impact Ghost(Pro) subscribers as well. I have a JavaScript code that uses the Admin API JavaScript Client that updates the content of one post. It used to work but now isn't working. I am seeing no errors. The post history shows that it is being updated but the content isn't changing. If I recall correctly, the source for the blog post used to show that it uses a markdown card. Now, I don't see a markdown class in the post's source. 
+
+I tried troubleshooting the code for several hours with the help of Bing AI to no avail. I agree, partially, with its observation:
+
+> The issue affects the mobiledoc format for posts, which is used by the Ghost API. The mobiledoc format is a JSON document that defines the structure and content of a post using cards, atoms, and markups. The problem is that the Ghost API is not creating the cards correctly, resulting in empty or corrupted posts.
+
+I think the problem is that the API isn't creating the cards, so my post's history shows it is being updated but the Markdown card inside the post isn't changing.  | github-actions (2024-04-15T16:04:32Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | daniellockyer (2024-05-21T13:46:28Z): This should be fixed now!",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"ASAMedia (2023-11-12T01:58:12Z): An example from the website I'm running ([lyonel-feininger-gymnasium.de](https://lyonel-feininger-gymnasium.de/)):
+It looks like this in the editor 
+![grafik](https://github.com/TryGhost/Ghost/assets/41484117/7ae64619-aebd-4858-9ba6-d02f542bfb20)
+
+and like this on the website
+![grafik](https://github.com/TryGhost/Ghost/assets/41484117/24c11f2b-89c2-4684-a15c-4d9cb95450bc)
+
+As you can see, the snow picture is nowhere to be seen. 
+ | ASAMedia (2023-11-12T14:29:06Z): Ok, I've got some more information:
+I looked into the db and found that the images are against my previous claims in fact are NOT present in the lexical field of the post
+
+Here is the code snippet from the working original docker version
+```
+ receive emails when new content is publishrfed!</p><figure class=""kg-card kg-image-card kg-width-wide""><img src=""__GHOST_URL__/content/images/2023/11/IMG_2658.jpeg"" class=""kg-image"" alt="""" loading=""lazy"" width=""2000"" height=""1500"" srcset=""__GHOST_URL__/content/images/size/w600/2023/11/IMG_2658.jpeg 600w, __GHOST_URL__/content/images/size/w1000/2023/11/IMG_2658.jpeg 1000w, __GHOST_URL__/content/images/size/w1600/2023/11/IMG_2658.jpeg 1600w, __GHOST_URL__/content/images/2023/11/IMG_2658.jpeg 2000w"" sizes=""(min-width: 1200px) 1200px""></figure><figure class=""kg-card kg-image-card""><img src=""__GHOST_URL__/content/images/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png"" class=""kg-image"" alt="""" loading=""lazy"" width=""1920"" height=""673"" srcset=""__GHOST_URL__/content/images/size/w600/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 600w, __GHOST_URL__/content/images/size/w1000/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1000w, __GHOST_URL__/content/images/size/w1600/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1600w, __GHOST_URL__/content/images/2023/11/Screenshot-2023-11-11-at-18-42-13-Studienfahrt-nach-Gillingham--Kent-GB--der-9.-Klassen.png 1920w"" sizes=""(min-width: 720px) 720px""></figure><hr>
+```
+And here the one I'm getting with my updated version inside docker
+```
+ receive emails when new content is publishrfed!</p>
+```
+
+**Now the question where does this go wrong?** | ASAMedia (2023-11-12T21:52:42Z): Another Update:
+I downloaded the original source files from [5.71.2](https://github.com/TryGhost/Ghost/releases/tag/v5.71.2) build them to an archive with `yarn archive` and used the resulting [ghost-5.71.2.tgz.zip](https://github.com/TryGhost/Ghost/files/13329268/ghost-5.71.2.tgz.zip) to update the ghost 5.71.0-alpine docker.
+
+Result: 
+The problem is still occuring the same way as before :(
+
+So it seems like in the build or update process the reference to the js for the kg-cards/nodes goes missing.
+I will attach some log info below, where the missing functions/attr are named when clicking the save/update button in the lexical-editor:
+<details>
+<summary>log output</summary>
+<br>
+<code>
+lfg-ghost    | CodeBlockNode must implement static ""getType"" method
+lfg-ghost    | CodeBlockNode must implement static ""clone"" method
+lfg-ghost    | CodeBlockNode must implement ""decorate"" method
+lfg-ghost    | CodeBlockNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CodeBlockNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ImageNode must implement static ""getType"" method
+lfg-ghost    | ImageNode must implement static ""clone"" method
+lfg-ghost    | ImageNode must implement ""decorate"" method
+lfg-ghost    | ImageNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | MarkdownNode must implement static ""getType"" method
+lfg-ghost    | MarkdownNode must implement static ""clone"" method
+lfg-ghost    | MarkdownNode must implement ""decorate"" method
+lfg-ghost    | MarkdownNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | MarkdownNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | VideoNode must implement static ""getType"" method
+lfg-ghost    | VideoNode must implement static ""clone"" method
+lfg-ghost    | VideoNode must implement ""decorate"" method
+lfg-ghost    | VideoNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | AudioNode must implement static ""getType"" method
+lfg-ghost    | AudioNode must implement static ""clone"" method
+lfg-ghost    | AudioNode must implement ""decorate"" method
+lfg-ghost    | AudioNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | AudioNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CalloutNode must implement static ""getType"" method
+lfg-ghost    | CalloutNode must implement static ""clone"" method
+lfg-ghost    | CalloutNode must implement ""decorate"" method
+lfg-ghost    | CalloutNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CalloutNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HorizontalRuleNode must implement static ""getType"" method
+lfg-ghost    | HorizontalRuleNode must implement static ""clone"" method
+lfg-ghost    | HorizontalRuleNode must implement ""decorate"" method
+lfg-ghost    | HorizontalRuleNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HorizontalRuleNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HtmlNode must implement static ""getType"" method
+lfg-ghost    | HtmlNode must implement static ""clone"" method
+lfg-ghost    | HtmlNode must implement ""decorate"" method
+lfg-ghost    | HtmlNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HtmlNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | FileNode must implement static ""getType"" method
+lfg-ghost    | FileNode must implement static ""clone"" method
+lfg-ghost    | FileNode must implement ""decorate"" method
+lfg-ghost    | FileNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ToggleNode must implement static ""getType"" method
+lfg-ghost    | ToggleNode must implement static ""clone"" method
+lfg-ghost    | ToggleNode must implement ""decorate"" method
+lfg-ghost    | ToggleNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ToggleNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ButtonNode must implement static ""getType"" method
+lfg-ghost    | ButtonNode must implement static ""clone"" method
+lfg-ghost    | ButtonNode must implement ""decorate"" method
+lfg-ghost    | ButtonNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ButtonNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HeaderNode must implement static ""getType"" method
+lfg-ghost    | HeaderNode must implement static ""clone"" method
+lfg-ghost    | HeaderNode must implement ""decorate"" method
+lfg-ghost    | HeaderNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | HeaderNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | BookmarkNode must implement static ""getType"" method
+lfg-ghost    | BookmarkNode must implement static ""clone"" method
+lfg-ghost    | BookmarkNode must implement ""decorate"" method
+lfg-ghost    | PaywallNode must implement static ""getType"" method
+lfg-ghost    | PaywallNode must implement static ""clone"" method
+lfg-ghost    | PaywallNode must implement ""decorate"" method
+lfg-ghost    | PaywallNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | PaywallNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | ProductNode must implement static ""getType"" method
+lfg-ghost    | ProductNode must implement static ""clone"" method
+lfg-ghost    | ProductNode must implement ""decorate"" method
+lfg-ghost    | ProductNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmbedNode must implement static ""getType"" method
+lfg-ghost    | EmbedNode must implement static ""clone"" method
+lfg-ghost    | EmbedNode must implement ""decorate"" method
+lfg-ghost    | EmbedNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmbedNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailNode must implement static ""getType"" method
+lfg-ghost    | EmailNode must implement static ""clone"" method
+lfg-ghost    | EmailNode must implement ""decorate"" method
+lfg-ghost    | EmailNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | GalleryNode must implement static ""getType"" method
+lfg-ghost    | GalleryNode must implement static ""clone"" method
+lfg-ghost    | GalleryNode must implement ""decorate"" method
+lfg-ghost    | GalleryNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | GalleryNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailCtaNode must implement static ""getType"" method
+lfg-ghost    | EmailCtaNode must implement static ""clone"" method
+lfg-ghost    | EmailCtaNode must implement ""decorate"" method
+lfg-ghost    | EmailCtaNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | EmailCtaNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | SignupNode must implement static ""getType"" method
+lfg-ghost    | SignupNode must implement static ""clone"" method
+lfg-ghost    | SignupNode must implement ""decorate"" method
+lfg-ghost    | SignupNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | SignupNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CollectionNode must implement static ""getType"" method
+lfg-ghost    | CollectionNode must implement static ""clone"" method
+lfg-ghost    | CollectionNode must implement ""decorate"" method
+lfg-ghost    | CollectionNode should implement ""importJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | CollectionNode should implement ""exportJSON"" method to ensure JSON and default HTML serialization works as expected
+lfg-ghost    | [2023-11-12 21:53:13] INFO Adding one-off job to queue with current length = 0 called 'sendWebmentions'
+lfg-ghost    | [2023-11-12 21:53:13] INFO ""PUT /ghost/api/admin/posts/654ff84b2fecd90001949776/?formats=mobiledoc%2Clexical&save_revision=1&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Cpost_revisions%2Cpost_revisions.author"" 200 133ms
+
+</code>
+</details> | sergiosgc (2023-11-28T18:17:26Z): Something in the build system is broken. I build my docker instance similar to how you do it, and since 5.71.0, at least, I get two `kg-default-nodes` modules, one in `ghost/node_modules/@tryghost` and one in `ghost/ghost/core/node_modules/@tryghost`. Removing `ghost/ghost/core/node_modules` fixes the issue.
+
+The duplicate module import creates two definitions of [KoenigDecoratorNode](https://github.com/TryGhost/Koenig/blob/d472dd6f74d5123edb202a51317cb42004e44a13/packages/kg-default-nodes/lib/KoenigDecoratorNode.js). This causes the `instanceof` test in `$isKoenigCard` to fail, which causes [`exportTopLevelElementOrDecorator`](https://github.com/TryGhost/Koenig/blob/d472dd6f74d5123edb202a51317cb42004e44a13/packages/kg-lexical-html-renderer/lib/convert-to-html-string.js#L37) to fail on elements where `$isKoenigCard` should return true but returns false (Images and Cards, at least).
+
+I know very little about Ghost's build system, but someone with more knowledge than me should be able to fix this fairly quickly.
+
+The official images do not exhibit this problem. They may be building ghost differently. | ASAMedia (2023-11-29T16:05:04Z): Wow great! Thanks @sergiosgc
+That will solve the issue till a fix is implemented. 
+
+Looks like `kg-default-nodes` is imported here `""@tryghost/kg-default-nodes"": ""0.2.9"",` in the [ghost/core/package.json](https://github.com/TryGhost/Ghost/blob/main/ghost/core/package.json#L105) 
+and 
+here `const {DEFAULT_NODES} = require('@tryghost/kg-default-nodes');` in the [ghost/core/core/server/lib/lexical.js](https://github.com/TryGhost/Ghost/blob/8fc6fef1685f216eef8eece40c3a38d7225beeb8/ghost/core/core/server/lib/lexical.js#L14)
+
+When I delete the line in the `package.json` and build, everything works as expected.
+
+Maybe this could be a valid **fix**? | hsarji (2023-12-17T15:03:22Z): This problem seems to impact Ghost(Pro) subscribers as well. I have a JavaScript code that uses the Admin API JavaScript Client that updates the content of one post. It used to work but now isn't working. I am seeing no errors. The post history shows that it is being updated but the content isn't changing. If I recall correctly, the source for the blog post used to show that it uses a markdown card. Now, I don't see a markdown class in the post's source. 
+
+I tried troubleshooting the code for several hours with the help of Bing AI to no avail. I agree, partially, with its observation:
+
+> The issue affects the mobiledoc format for posts, which is used by the Ghost API. The mobiledoc format is a JSON document that defines the structure and content of a post using cards, atoms, and markups. The problem is that the Ghost API is not creating the cards correctly, resulting in empty or corrupted posts.
+
+I think the problem is that the API isn't creating the cards, so my post's history shows it is being updated but the Markdown card inside the post isn't changing.  | github-actions (2024-04-15T16:04:32Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | daniellockyer (2024-05-21T13:46:28Z): This should be fixed now! Lexical kg-cards missing on website after ghost update with zip",1
+I_kwDOAJZX9s5yro3D,Importing HTML with Lexical editor selected results in loss of images.,CLOSED,COMPLETED,18448.0,2023-10-03T12:29:38Z,2023-10-19T18:17:27Z,2023-10-19T18:17:27Z,https://github.com/TryGhost/Ghost/issues/18448,cathysarisky,"bug, affects:editor",kevinansfield,"kevinansfield (2023-10-03T12:44:22Z): > Importing HTML that includes image links, using the Admin API. (Images previously imported with the API images endpoint.)
+If I select the Lexical editor (in the admin interface), images get stripped out. (They're not broken links - the img tag is totally missing.)
+If I turn off the Lexical editor, images appear correctly.
+
+Hi @cathysarisky, to clarify this point do you mean importing with the beta flag on vs off or do you mean after importing the beta flag has some effect when toggled?
+
+Could you provide a short example of the HTML you are importing please? | cathysarisky (2023-10-03T13:06:15Z): The beta flag seems to have an effect on import.  If I turn it on, the import fails.
+Example HTML to follow. | 9larsons (2023-10-06T15:40:26Z): I was able to import fine applying a link to the image as well as a link in the caption.
+
+Sample body for the API request:
+```
+{
+    ""posts"": [
+        {
+            ""title"": ""Image Link Import Testing"",
+            ""status"": ""published"",
+            ""html"": ""<figure class=\""kg-card kg-image-card kg-card-hascaption\""><a href=\""imageLink\""><img src=\""__GHOST_URL__/content/images/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg\"" class=\""kg-image\"" alt=\""\"" loading=\""lazy\"" width=\""2000\"" height=\""1526\"" srcset=\""__GHOST_URL__/content/images/size/w600/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 600w, __GHOST_URL__/content/images/size/w1000/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 1000w, __GHOST_URL__/content/images/size/w1600/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 1600w, __GHOST_URL__/content/images/size/w2400/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 2400w\"" sizes=\""(min-width: 720px) 720px\""></a><figcaption><span style=\""white-space: pre-wrap;\"">caption </span><a href=\""captionLink\"" rel=\""noreferrer\""><span style=\""white-space: pre-wrap;\"">link</span></a></figcaption></figure>""
+        }
+    ]
+}
+```
+
+@cathysarisky could you provide the html string you were using? | kevinansfield (2023-10-06T16:51:42Z): @9larsons was this with the latest release containing parser improvements?
+
+@cathysarisky if you can, please try updating to the most recent release and try again to see if the issue has been fixed | cathysarisky (2023-10-06T17:01:56Z): Sorry for the delay -- I didn't mean to open a report and abandon it.  My
+import content was not Ghost-generated, so it's possible I've found an edge
+case in html to lexical conversion.
+I haven't had a chance to reproduce on the latest Ghost - too much client
+work pending.  Will do ASAP! :)
+
+On Fri, Oct 6, 2023 at 12:51 PM Kevin Ansfield ***@***.***>
+wrote:
+
+> @9larsons <https://github.com/9larsons> was this with the latest release
+> containing parser improvements?
+>
+> @cathysarisky <https://github.com/cathysarisky> if you can, please try
+> updating to the most recent release and try again to see if the issue has
+> been fixed
+>
+> —
+> Reply to this email directly, view it on GitHub
+> <https://github.com/TryGhost/Ghost/issues/18448#issuecomment-1751103124>,
+> or unsubscribe
+> <https://github.com/notifications/unsubscribe-auth/AKCXDVQIHXHYBJB4JSAVQJDX6AZKVAVCNFSM6AAAAAA5Q5CQPGVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHMYTONJRGEYDGMJSGQ>
+> .
+> You are receiving this because you were mentioned.Message ID:
+> ***@***.***>
+>
+ | 9larsons (2023-10-06T18:07:38Z): Yes, this was using the most recent release - it's possible this was fixed with the changes I just pushed with that. I can't say for certain without knowing the html string. I don't feel it's likely it was resolved by the changes I made. Please just give the new release a shot and we'll find out! | 9larsons (2023-10-13T13:35:59Z): @cathysarisky hey - did you get a chance to try this out again? | cathysarisky (2023-10-14T21:27:32Z): OK, trying on Ghost Pro, so that's version: [5.68.0+moya](https://github.com/TryGhost/Ghost/releases/tag/v5.68.0+moya)
+
+The beta editor slider is gone, and the problem occurs.
+
+Here's a fairly minimalist repro case:
+
+```
+let ghostAPI=process.env.ghostAPI;
+let ghostKey=process.env.ghostKey;
+
+const api = new GhostAdminAPI({
+    url: ghostAPI,
+    version: ""v5.0"",
+    key: ghostKey
+});
+
+let html = `
+<html><head></head><body><p>Here is a post</p>
+<p>Of course, it's a little complicated -- otherwise it wouldn't be so amusing.</p>
+
+<p><img alt=""Great Pyramid of Giza"" class=""asset  asset-image"" src=""https://demo.spectralwebservices.com/content/images/2023/10/Events-Page.png\"" title=""Random image from my work""></p>
+</body></html>
+`
+
+api.posts
+.add(
+    {title: 'Hello World',
+        tags: ['only testing'], 
+        status: 'published', 
+        html: html,
+        slug: 'slug-it-out'
+    }, {source: 'html'}
+).then((response) => {console.log('response is', response)}).catch((error) => {console.log('error is', error)})
+```
+
+This API call happens correctly, but there's a problem somewhere.
+
+Here's the lexical returned as part of the post object created above:
+```
+      lexical: `{""root"":{""children"":[{""children"":[{""detail"":0,""format"":0,""mode"":""normal"",""style"":"""",""text"":""Here is a post"",""type"":""text"",""version"":1}],""direction"":null,""format"":"""",""indent"":0,""type"":""paragraph"",""version"":1},{""children"":[{""detail"":0,""format"":0,""mode"":""normal"",""style"":"""",""text"":""Of course, it's a little complicated -- otherwise it wouldn't be so amusing."",""type"":""text"",""version"":1}],""direction"":null,""format"":"""",""indent"":0,""type"":""paragraph"",""version"":1},{""children"":[{""type"":""image"",""version"":1,""src"":""https://demo.spectralwebservices.com/content/images/2023/10/Events-Page.png"",""width"":null,""height"":null,""title"":""Random image from my work"",""alt"":""Great Pyramid of Giza"",""caption"":"""",""cardWidth"":""regular"",""href"":""""}],""direction"":null,""format"":"""",""indent"":0,""type"":""paragraph"",""version"":1}],""direction"":null,""format"":"""",""indent"":0,""type"":""root"",""version"":1}}`,
+```
+
+Upon viewing, the image is not present.  Here's the relevant HTML output upon visiting the post.
+```
+<section class=""gh-content gh-canvas is-body"">
+            <p>Here is a post</p><p>Of course, it's a little complicated -- otherwise it wouldn't be so amusing.</p>
+</section>
+```
+If I load the post in the Ghost post editor and republish it, then I get this:
+```
+<section class=""gh-content gh-canvas is-body"">
+            <p>Here is a post</p><p>Of course, it's a little complicated -- otherwise it wouldn't be so amusing.</p><p></p><figure class=""kg-card kg-image-card""><img src=""https://demo.spectralwebservices.com/content/images/2023/10/Events-Page.png"" class=""kg-image"" alt=""Great Pyramid of Giza"" loading=""lazy"" title=""Random image from my work""></figure>
+        </section>
+```
+... which is what I wanted in the first place!
+
+With the removal of the old editor, I don't have a workaround for this bug.
+
+ | kevinansfield (2023-10-17T07:59:19Z): Thanks @cathysarisky. Looks like this issue is related to the parsing generating an invalid tree state with an image card node nested inside a paragraph node.
+
+We've added transforms to rectify this state to the editor itself which is why opening the editor and re-publishing works but we're missing those transforms on the server-side html->lexical route. We were actually talking about this yesterday before seeing your reply and have a plan so it should be resolved in the next Ghost release. | kevinansfield (2023-10-17T08:17:51Z): Short-term workaround would be not wrapping images in paragraphs in the source HTML if that's possible.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"kevinansfield (2023-10-03T12:44:22Z): > Importing HTML that includes image links, using the Admin API. (Images previously imported with the API images endpoint.)
+If I select the Lexical editor (in the admin interface), images get stripped out. (They're not broken links - the img tag is totally missing.)
+If I turn off the Lexical editor, images appear correctly.
+
+Hi @cathysarisky, to clarify this point do you mean importing with the beta flag on vs off or do you mean after importing the beta flag has some effect when toggled?
+
+Could you provide a short example of the HTML you are importing please? | cathysarisky (2023-10-03T13:06:15Z): The beta flag seems to have an effect on import.  If I turn it on, the import fails.
+Example HTML to follow. | 9larsons (2023-10-06T15:40:26Z): I was able to import fine applying a link to the image as well as a link in the caption.
+
+Sample body for the API request:
+```
+{
+    ""posts"": [
+        {
+            ""title"": ""Image Link Import Testing"",
+            ""status"": ""published"",
+            ""html"": ""<figure class=\""kg-card kg-image-card kg-card-hascaption\""><a href=\""imageLink\""><img src=\""__GHOST_URL__/content/images/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg\"" class=\""kg-image\"" alt=\""\"" loading=\""lazy\"" width=\""2000\"" height=\""1526\"" srcset=\""__GHOST_URL__/content/images/size/w600/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 600w, __GHOST_URL__/content/images/size/w1000/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 1000w, __GHOST_URL__/content/images/size/w1600/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 1600w, __GHOST_URL__/content/images/size/w2400/2023/10/2560px-Mandolin_guitar_band_crystal_palace-1.jpg 2400w\"" sizes=\""(min-width: 720px) 720px\""></a><figcaption><span style=\""white-space: pre-wrap;\"">caption </span><a href=\""captionLink\"" rel=\""noreferrer\""><span style=\""white-space: pre-wrap;\"">link</span></a></figcaption></figure>""
+        }
+    ]
+}
+```
+
+@cathysarisky could you provide the html string you were using? | kevinansfield (2023-10-06T16:51:42Z): @9larsons was this with the latest release containing parser improvements?
+
+@cathysarisky if you can, please try updating to the most recent release and try again to see if the issue has been fixed | cathysarisky (2023-10-06T17:01:56Z): Sorry for the delay -- I didn't mean to open a report and abandon it.  My
+import content was not Ghost-generated, so it's possible I've found an edge
+case in html to lexical conversion.
+I haven't had a chance to reproduce on the latest Ghost - too much client
+work pending.  Will do ASAP! :)
+
+On Fri, Oct 6, 2023 at 12:51 PM Kevin Ansfield ***@***.***>
+wrote:
+
+> @9larsons <https://github.com/9larsons> was this with the latest release
+> containing parser improvements?
+>
+> @cathysarisky <https://github.com/cathysarisky> if you can, please try
+> updating to the most recent release and try again to see if the issue has
+> been fixed
+>
+> —
+> Reply to this email directly, view it on GitHub
+> <https://github.com/TryGhost/Ghost/issues/18448#issuecomment-1751103124>,
+> or unsubscribe
+> <https://github.com/notifications/unsubscribe-auth/AKCXDVQIHXHYBJB4JSAVQJDX6AZKVAVCNFSM6AAAAAA5Q5CQPGVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHMYTONJRGEYDGMJSGQ>
+> .
+> You are receiving this because you were mentioned.Message ID:
+> ***@***.***>
+>
+ | 9larsons (2023-10-06T18:07:38Z): Yes, this was using the most recent release - it's possible this was fixed with the changes I just pushed with that. I can't say for certain without knowing the html string. I don't feel it's likely it was resolved by the changes I made. Please just give the new release a shot and we'll find out! | 9larsons (2023-10-13T13:35:59Z): @cathysarisky hey - did you get a chance to try this out again? | cathysarisky (2023-10-14T21:27:32Z): OK, trying on Ghost Pro, so that's version: [5.68.0+moya](https://github.com/TryGhost/Ghost/releases/tag/v5.68.0+moya)
+
+The beta editor slider is gone, and the problem occurs.
+
+Here's a fairly minimalist repro case:
+
+```
+let ghostAPI=process.env.ghostAPI;
+let ghostKey=process.env.ghostKey;
+
+const api = new GhostAdminAPI({
+    url: ghostAPI,
+    version: ""v5.0"",
+    key: ghostKey
+});
+
+let html = `
+<html><head></head><body><p>Here is a post</p>
+<p>Of course, it's a little complicated -- otherwise it wouldn't be so amusing.</p>
+
+<p><img alt=""Great Pyramid of Giza"" class=""asset  asset-image"" src=""https://demo.spectralwebservices.com/content/images/2023/10/Events-Page.png\"" title=""Random image from my work""></p>
+</body></html>
+`
+
+api.posts
+.add(
+    {title: 'Hello World',
+        tags: ['only testing'], 
+        status: 'published', 
+        html: html,
+        slug: 'slug-it-out'
+    }, {source: 'html'}
+).then((response) => {console.log('response is', response)}).catch((error) => {console.log('error is', error)})
+```
+
+This API call happens correctly, but there's a problem somewhere.
+
+Here's the lexical returned as part of the post object created above:
+```
+      lexical: `{""root"":{""children"":[{""children"":[{""detail"":0,""format"":0,""mode"":""normal"",""style"":"""",""text"":""Here is a post"",""type"":""text"",""version"":1}],""direction"":null,""format"":"""",""indent"":0,""type"":""paragraph"",""version"":1},{""children"":[{""detail"":0,""format"":0,""mode"":""normal"",""style"":"""",""text"":""Of course, it's a little complicated -- otherwise it wouldn't be so amusing."",""type"":""text"",""version"":1}],""direction"":null,""format"":"""",""indent"":0,""type"":""paragraph"",""version"":1},{""children"":[{""type"":""image"",""version"":1,""src"":""https://demo.spectralwebservices.com/content/images/2023/10/Events-Page.png"",""width"":null,""height"":null,""title"":""Random image from my work"",""alt"":""Great Pyramid of Giza"",""caption"":"""",""cardWidth"":""regular"",""href"":""""}],""direction"":null,""format"":"""",""indent"":0,""type"":""paragraph"",""version"":1}],""direction"":null,""format"":"""",""indent"":0,""type"":""root"",""version"":1}}`,
+```
+
+Upon viewing, the image is not present.  Here's the relevant HTML output upon visiting the post.
+```
+<section class=""gh-content gh-canvas is-body"">
+            <p>Here is a post</p><p>Of course, it's a little complicated -- otherwise it wouldn't be so amusing.</p>
+</section>
+```
+If I load the post in the Ghost post editor and republish it, then I get this:
+```
+<section class=""gh-content gh-canvas is-body"">
+            <p>Here is a post</p><p>Of course, it's a little complicated -- otherwise it wouldn't be so amusing.</p><p></p><figure class=""kg-card kg-image-card""><img src=""https://demo.spectralwebservices.com/content/images/2023/10/Events-Page.png"" class=""kg-image"" alt=""Great Pyramid of Giza"" loading=""lazy"" title=""Random image from my work""></figure>
+        </section>
+```
+... which is what I wanted in the first place!
+
+With the removal of the old editor, I don't have a workaround for this bug.
+
+ | kevinansfield (2023-10-17T07:59:19Z): Thanks @cathysarisky. Looks like this issue is related to the parsing generating an invalid tree state with an image card node nested inside a paragraph node.
+
+We've added transforms to rectify this state to the editor itself which is why opening the editor and re-publishing works but we're missing those transforms on the server-side html->lexical route. We were actually talking about this yesterday before seeing your reply and have a plan so it should be resolved in the next Ghost release. | kevinansfield (2023-10-17T08:17:51Z): Short-term workaround would be not wrapping images in paragraphs in the source HTML if that's possible. Importing HTML with Lexical editor selected results in loss of images.",1
+I_kwDOAJZX9s5yNq6B,Duplicate Entry inserting into `permissions` when starting from Backup,CLOSED,COMPLETED,18386.0,2023-09-27T19:27:21Z,2024-04-21T08:02:24Z,2023-09-27T22:06:36Z,https://github.com/TryGhost/Ghost/issues/18386,K1D77A,,,K1D77A (2023-09-27T21:51:38Z): hold up on checking on this | K1D77A (2023-09-27T22:06:36Z): My fault!!! For some reason the default docker container in the examples is alpine-4... | agentzhao (2024-04-21T08:02:23Z): @K1D77A hey I'm currently facing the same issue after importing my database from mariadb. May I know how you fixed it?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,K1D77A (2023-09-27T21:51:38Z): hold up on checking on this | K1D77A (2023-09-27T22:06:36Z): My fault!!! For some reason the default docker container in the examples is alpine-4... | agentzhao (2024-04-21T08:02:23Z): @K1D77A hey I'm currently facing the same issue after importing my database from mariadb. May I know how you fixed it? Duplicate Entry inserting into `permissions` when starting from Backup,1
+I_kwDOAJZX9s5sRNgY,Discord webhook,CLOSED,COMPLETED,17452.0,2023-07-21T22:38:18Z,2023-09-13T18:36:47Z,2023-09-13T18:36:46Z,https://github.com/TryGhost/Ghost/issues/17452,LosBagros,bug,,"daniellockyer (2023-08-11T06:52:55Z): It seems the Discord endpoint has changed such that our Slack-compatible code no longer works
+
+A PR to fix this would be welcome 🙂 | h2akim (2023-09-11T06:35:25Z): Hi 👋!
+
+This might not be a bug. Just need documentation update.
+
+For slack-compatible url, need to append `/slack` to discord webhook url.
+
+Just did a test after the url append. Looks like working without a problem
+![Screenshot 2023-09-11 at 2 33 05 PM](https://github.com/TryGhost/Ghost/assets/514048/6396772c-f7cc-4550-82dc-5207e8a0ce87)
+
+Example: `https://discord.com/api/webhooks/<webhookId>/<webhhookToken>/slack`
+Reference: https://discord.com/developers/docs/resources/webhook#execute-slackcompatible-webhook
+
+Thanks | LosBagros (2023-09-13T18:36:47Z): Thanks",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"daniellockyer (2023-08-11T06:52:55Z): It seems the Discord endpoint has changed such that our Slack-compatible code no longer works
+
+A PR to fix this would be welcome 🙂 | h2akim (2023-09-11T06:35:25Z): Hi 👋!
+
+This might not be a bug. Just need documentation update.
+
+For slack-compatible url, need to append `/slack` to discord webhook url.
+
+Just did a test after the url append. Looks like working without a problem
+![Screenshot 2023-09-11 at 2 33 05 PM](https://github.com/TryGhost/Ghost/assets/514048/6396772c-f7cc-4550-82dc-5207e8a0ce87)
+
+Example: `https://discord.com/api/webhooks/<webhookId>/<webhhookToken>/slack`
+Reference: https://discord.com/developers/docs/resources/webhook#execute-slackcompatible-webhook
+
+Thanks | LosBagros (2023-09-13T18:36:47Z): Thanks Discord webhook",1
+I_kwDOAJZX9s5rq1OD,Some image sizes created as 0 byte files,CLOSED,COMPLETED,17379.0,2023-07-16T01:17:53Z,2023-09-22T18:17:56Z,2023-09-22T18:17:56Z,https://github.com/TryGhost/Ghost/issues/17379,jlopp,bug,,"markstos (2023-07-19T20:43:05Z): I used to manage a site that had 36 million images. One of them was of an innocent looking dog named Mindy. Mindy ruined my weekend.
+
+Every time someone uploaded a photo of Mindy, the server would enter a death spiral and eventually crash. But I did not know someone was trying to repeatedly post Mindy. I only new the web site keep death spiraling.
+
+It took hours, over the weekend, to track down that this wasn't a normal coding problem, but ultimately a bug in the ImageMagick library triggered by invalid JPEG data in Mindy's photo file. ( The fix: use the GraphicsMagick fork ).
+
+Maybe you've encountered a variation of the Mindy bug. You can test to see if specific photos reliably trigger it. If you find one, try running it through a photo processing app that rewrites the file-- any app would do. I'll recommend https://squoosh.app/  
+
+This laundering might clean out any triggering corruption inside the original image.  If you can /still/ trigger the issue, I'll wager that either:
+
+   1. Ghost has some kind of validation failure and should be rejecting the image earlier (too big?)
+   2. Indeed, Ghost as an image processing bug, or more likely the upstream image processing library it uses.  | daniellockyer (2023-07-20T07:00:38Z): Ghost doesn't do any image processing itself, but we do use https://github.com/lovell/sharp. Would you be able to report the issue there w/ the sample file, and link to this issue please? 🙂  | jlopp (2023-07-24T11:13:54Z): Unfortunately I haven't been able to reproduce this issue, even if I publish another article with the same images. The only difference is that I'm not emailing out the post when I publish. | markstos (2023-07-25T15:40:32Z): Zero-byte files might also happen  if the disk filled up, and that could explain when it's not reproducible now. Even if you check the disk now and it's not full, it's possible the some logs got rotated, the system was rebooted or something else happened to recover disk space. 
+
+If you have monitoring setup on the disk space, this could help to observe trends. For example, you might see that a disk is coming close to filling up each day, and the automatic log rotation happens and recovers enough disk space. | jlopp (2023-07-25T18:47:01Z): Don't think it's a disk space issue; this dedicated machine has 20 GB of free space and doesn't run any other software; looks like it only writes ~50MB of logs per day and logs get compressed once they're 2 weeks old, so a total of less than 1 GB of uncompressed logs. | markstos (2023-07-25T20:27:51Z): @jlopp Does it have two partitions like ""/"" and ""/home"" or a single partition? If Ghost happens to write to  `/tmp` was mounted in memory as a RAM disk, that could fill up if a temp file was larger than memory. (I haven't checked Ghost if it caches uploads in tmp).  | jlopp (2023-07-26T14:29:52Z): @markstos only a single partition for / | markstos (2023-08-02T15:19:16Z): I have seen zero byte files created by other tools when the fail during processing-- after the file has been opened but before it has been written. Still, without having a  possibly triggering file to test with, it's hard to know if the file is unusual or corrupted, if Ghost has a bug, or if there happened to be some resource contention during processing.  | markstos (2023-09-22T17:18:21Z): @jlopp You mentioned at the time you sent your post that it had several images in it-- presumably you could see them before they were published and they looked fine. This indicates that the image were successfully uploaded and, at least then, not-zero-byte. 
+
+Because this issue is not reproducible and because it has some indications of a ""disk full"" scenario, I recommend the issue be closed as Ghost bug. 
+
+Sometimes disks can run out of inodes even when they have disk space or there can be ""phantom"" disk space filling up a disk if log rotation isn't configured correctly. 
+
+Having graphs of the disk space and CPU could help better diagnosis an issue like this in the future.   | jlopp (2023-09-22T18:17:56Z): Yes, and I've published several posts since then without seeing the issue re-appear. Will re-open if it happens again and I can surface any commonalities.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"markstos (2023-07-19T20:43:05Z): I used to manage a site that had 36 million images. One of them was of an innocent looking dog named Mindy. Mindy ruined my weekend.
+
+Every time someone uploaded a photo of Mindy, the server would enter a death spiral and eventually crash. But I did not know someone was trying to repeatedly post Mindy. I only new the web site keep death spiraling.
+
+It took hours, over the weekend, to track down that this wasn't a normal coding problem, but ultimately a bug in the ImageMagick library triggered by invalid JPEG data in Mindy's photo file. ( The fix: use the GraphicsMagick fork ).
+
+Maybe you've encountered a variation of the Mindy bug. You can test to see if specific photos reliably trigger it. If you find one, try running it through a photo processing app that rewrites the file-- any app would do. I'll recommend https://squoosh.app/  
+
+This laundering might clean out any triggering corruption inside the original image.  If you can /still/ trigger the issue, I'll wager that either:
+
+   1. Ghost has some kind of validation failure and should be rejecting the image earlier (too big?)
+   2. Indeed, Ghost as an image processing bug, or more likely the upstream image processing library it uses.  | daniellockyer (2023-07-20T07:00:38Z): Ghost doesn't do any image processing itself, but we do use https://github.com/lovell/sharp. Would you be able to report the issue there w/ the sample file, and link to this issue please? 🙂  | jlopp (2023-07-24T11:13:54Z): Unfortunately I haven't been able to reproduce this issue, even if I publish another article with the same images. The only difference is that I'm not emailing out the post when I publish. | markstos (2023-07-25T15:40:32Z): Zero-byte files might also happen  if the disk filled up, and that could explain when it's not reproducible now. Even if you check the disk now and it's not full, it's possible the some logs got rotated, the system was rebooted or something else happened to recover disk space. 
+
+If you have monitoring setup on the disk space, this could help to observe trends. For example, you might see that a disk is coming close to filling up each day, and the automatic log rotation happens and recovers enough disk space. | jlopp (2023-07-25T18:47:01Z): Don't think it's a disk space issue; this dedicated machine has 20 GB of free space and doesn't run any other software; looks like it only writes ~50MB of logs per day and logs get compressed once they're 2 weeks old, so a total of less than 1 GB of uncompressed logs. | markstos (2023-07-25T20:27:51Z): @jlopp Does it have two partitions like ""/"" and ""/home"" or a single partition? If Ghost happens to write to  `/tmp` was mounted in memory as a RAM disk, that could fill up if a temp file was larger than memory. (I haven't checked Ghost if it caches uploads in tmp).  | jlopp (2023-07-26T14:29:52Z): @markstos only a single partition for / | markstos (2023-08-02T15:19:16Z): I have seen zero byte files created by other tools when the fail during processing-- after the file has been opened but before it has been written. Still, without having a  possibly triggering file to test with, it's hard to know if the file is unusual or corrupted, if Ghost has a bug, or if there happened to be some resource contention during processing.  | markstos (2023-09-22T17:18:21Z): @jlopp You mentioned at the time you sent your post that it had several images in it-- presumably you could see them before they were published and they looked fine. This indicates that the image were successfully uploaded and, at least then, not-zero-byte. 
+
+Because this issue is not reproducible and because it has some indications of a ""disk full"" scenario, I recommend the issue be closed as Ghost bug. 
+
+Sometimes disks can run out of inodes even when they have disk space or there can be ""phantom"" disk space filling up a disk if log rotation isn't configured correctly. 
+
+Having graphs of the disk space and CPU could help better diagnosis an issue like this in the future.   | jlopp (2023-09-22T18:17:56Z): Yes, and I've published several posts since then without seeing the issue re-appear. Will re-open if it happens again and I can surface any commonalities. Some image sizes created as 0 byte files",1
+I_kwDOAJZX9s5q6DCn,Wrong email sender address when changing support email address in `Customize Portal`,CLOSED,NOT_PLANNED,17244.0,2023-07-07T13:59:12Z,2024-10-28T04:07:41Z,2023-12-09T16:04:24Z,https://github.com/TryGhost/Ghost/issues/17244,wangx1ng,"stale, needs:triage",,"bonik21 (2023-07-11T01:00:25Z): in Docker image 5.54.0 (Last pushed 13 minutes ago) it's still not fixed
+Use This File
+https://github.com/TryGhost/Ghost/blob/5493c0fbbfcd163655a0d4797c8cf5853c82e9c6/ghost/core/core/server/services/mail/GhostMailer.js
+path : /var/lib/ghost/current/core/server/services/mail/GhostMailer.js
+
+docker-compose.yml example:
+```
+   volumes:      
+      - './content:/var/lib/ghost/content'
+      - './GhostMailer.js:/var/lib/ghost/current/core/server/services/mail/GhostMailer.js'
+```
+
+ | github-actions (2023-08-04T14:05:44Z): This issue is currently awaiting triage from @daniellockyer. We're having a busy time right now, but we'll update this issue ASAP. If you have any more information to help us triage faster please leave us some comments. Thank you for understanding 🙂 | github-actions (2023-12-02T15:04:11Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | MFYDev (2024-10-28T04:07:40Z): Do not know why everything related to this issue is closed, the issue is still happening https://github.com/TryGhost/Ghost/issues/21423
+![image](https://github.com/user-attachments/assets/5c826d36-0a44-4ce5-8597-b21e135d77cc)
+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"bonik21 (2023-07-11T01:00:25Z): in Docker image 5.54.0 (Last pushed 13 minutes ago) it's still not fixed
+Use This File
+https://github.com/TryGhost/Ghost/blob/5493c0fbbfcd163655a0d4797c8cf5853c82e9c6/ghost/core/core/server/services/mail/GhostMailer.js
+path : /var/lib/ghost/current/core/server/services/mail/GhostMailer.js
+
+docker-compose.yml example:
+```
+   volumes:      
+      - './content:/var/lib/ghost/content'
+      - './GhostMailer.js:/var/lib/ghost/current/core/server/services/mail/GhostMailer.js'
+```
+
+ | github-actions (2023-08-04T14:05:44Z): This issue is currently awaiting triage from @daniellockyer. We're having a busy time right now, but we'll update this issue ASAP. If you have any more information to help us triage faster please leave us some comments. Thank you for understanding 🙂 | github-actions (2023-12-02T15:04:11Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | MFYDev (2024-10-28T04:07:40Z): Do not know why everything related to this issue is closed, the issue is still happening https://github.com/TryGhost/Ghost/issues/21423
+![image](https://github.com/user-attachments/assets/5c826d36-0a44-4ce5-8597-b21e135d77cc)
+ Wrong email sender address when changing support email address in `Customize Portal`",1
+I_kwDOAJZX9s5oW7UK,Broken counting of minutes to read when big base64 image on page,CLOSED,NOT_PLANNED,16980.0,2023-06-10T07:05:38Z,2023-10-21T05:04:26Z,2023-10-21T05:04:26Z,https://github.com/TryGhost/Ghost/issues/16980,Dmitry-Lisichkin,"bug, stale",,"daniellockyer (2023-06-12T06:37:52Z): Hey there, thank you so much for the detailed bug report.
+
+That does look like something that shouldn't happen! A PR to fix this issue would be very welcome 🙂 | luuu-xu (2023-06-13T20:04:19Z): @daniellockyer @Dmitry-Lisichkin Hi, I would like to work on this issue but I can't reproduce this bug on my local environment. 
+
+What I did: created a new post, added a few pictures varying from 200Kb to 3Mb, format in png and jpeg, including dragging directly from Photos, and clicking on the plus icon when editing the post. 
+
+The post preview at http://localhost:2368/ghost/#/editor/post/[postid] and the actual post at  http://localhost:2368/coming-soon/ do not have any <img> in base64 form.
+
+I tired these again: added two raw html card to the draft, with `<img src=""data:image/jpeg;base64 ......"" />`, although both of them are under 1Mb (online encoder's limit), the preview of the post is still working fine. | Dmitry-Lisichkin (2023-06-15T19:14:20Z): @luuu-xu Hey!. As i sayd I don't know how we had image in base64 form so on local environment I just add it as raw html block.
+For convert bigger files you can use cli tools or converters based on javascript that run in browser (for example: https://stackoverflow.com/questions/17710147/image-convert-to-base64)
+I'm not a javascript developer and have no much time but it seams that problem is only about regular expression, we do not need match group if we need only image count so this regular could be simplified to this: `/<img[^>]*>/` (not checked that it works). | Dmitry-Lisichkin (2023-06-15T19:24:42Z): I think that I create issue on wrong repository. Related code placed in TryGhost/SDK https://github.com/TryGhost/SDK/blob/60ab3c7b73d1d7d92987b7eb3d8e73f920dd6800/packages/helpers/lib/utils/count-images.js#L15 | luuu-xu (2023-06-15T21:05:39Z): @Dmitry-Lisichkin Thank you for the extra information! I again tried adding 5 photos of base64 format within raw HTML blocks `<img src=""data:image/jpeg;base64 ...."" />`,  the result HTML file is at 12Mb now and by inspecting DOM I can see there are indeed 5 base64 image elements, but I still can't reproduce the error. Maybe this issue is beyond my abilities... ?
+
+<img width=""669"" alt=""Screenshot 2023-06-15 at 17 06 14"" src=""https://github.com/TryGhost/Ghost/assets/97932191/936c353a-d75a-4c02-ae24-7a7b16c67665"">
+
+ | Dmitry-Lisichkin (2023-06-16T05:01:50Z): @luuu-xu I think that problem is about match group in regex so insted of several images use only one but with bigger size. In this case base64 in not need to be valid so just copypaste value in one src several times. | github-actions (2023-10-14T05:04:08Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"daniellockyer (2023-06-12T06:37:52Z): Hey there, thank you so much for the detailed bug report.
+
+That does look like something that shouldn't happen! A PR to fix this issue would be very welcome 🙂 | luuu-xu (2023-06-13T20:04:19Z): @daniellockyer @Dmitry-Lisichkin Hi, I would like to work on this issue but I can't reproduce this bug on my local environment. 
+
+What I did: created a new post, added a few pictures varying from 200Kb to 3Mb, format in png and jpeg, including dragging directly from Photos, and clicking on the plus icon when editing the post. 
+
+The post preview at http://localhost:2368/ghost/#/editor/post/[postid] and the actual post at  http://localhost:2368/coming-soon/ do not have any <img> in base64 form.
+
+I tired these again: added two raw html card to the draft, with `<img src=""data:image/jpeg;base64 ......"" />`, although both of them are under 1Mb (online encoder's limit), the preview of the post is still working fine. | Dmitry-Lisichkin (2023-06-15T19:14:20Z): @luuu-xu Hey!. As i sayd I don't know how we had image in base64 form so on local environment I just add it as raw html block.
+For convert bigger files you can use cli tools or converters based on javascript that run in browser (for example: https://stackoverflow.com/questions/17710147/image-convert-to-base64)
+I'm not a javascript developer and have no much time but it seams that problem is only about regular expression, we do not need match group if we need only image count so this regular could be simplified to this: `/<img[^>]*>/` (not checked that it works). | Dmitry-Lisichkin (2023-06-15T19:24:42Z): I think that I create issue on wrong repository. Related code placed in TryGhost/SDK https://github.com/TryGhost/SDK/blob/60ab3c7b73d1d7d92987b7eb3d8e73f920dd6800/packages/helpers/lib/utils/count-images.js#L15 | luuu-xu (2023-06-15T21:05:39Z): @Dmitry-Lisichkin Thank you for the extra information! I again tried adding 5 photos of base64 format within raw HTML blocks `<img src=""data:image/jpeg;base64 ...."" />`,  the result HTML file is at 12Mb now and by inspecting DOM I can see there are indeed 5 base64 image elements, but I still can't reproduce the error. Maybe this issue is beyond my abilities... ?
+
+<img width=""669"" alt=""Screenshot 2023-06-15 at 17 06 14"" src=""https://github.com/TryGhost/Ghost/assets/97932191/936c353a-d75a-4c02-ae24-7a7b16c67665"">
+
+ | Dmitry-Lisichkin (2023-06-16T05:01:50Z): @luuu-xu I think that problem is about match group in regex so insted of several images use only one but with bigger size. In this case base64 in not need to be valid so just copypaste value in one src several times. | github-actions (2023-10-14T05:04:08Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 Broken counting of minutes to read when big base64 image on page",1
+I_kwDOAJZX9s5ljOOr,Provide a nice message when missing content-type,CLOSED,NOT_PLANNED,16768.0,2023-05-10T11:42:01Z,2023-05-25T13:07:31Z,2023-05-25T13:07:31Z,https://github.com/TryGhost/Ghost/issues/16768,K1D77A,needs:info,,"MMak1599 (2023-05-10T13:38:59Z): I will give this a go.  | daniellockyer (2023-05-11T12:46:26Z): Do you have a reproduction case I can use? | github-actions (2023-05-11T12:46:50Z): Note from our bot: The `needs:info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | K1D77A (2023-05-12T09:25:15Z): > Do you have a reproduction case I can use?
+
+Make a request to an admin endpoint that accepts a JSON body (for example creating a new post) and do not include the Content-Type header. | github-actions (2023-05-25T13:07:30Z): Hey @K1D77A 👋
+
+Our team needed some more info to get to the bottom of this, however we've not heard back from you. We're going to close this for now, but let us know if you manage to dig up some more info and we'll reopen.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"MMak1599 (2023-05-10T13:38:59Z): I will give this a go.  | daniellockyer (2023-05-11T12:46:26Z): Do you have a reproduction case I can use? | github-actions (2023-05-11T12:46:50Z): Note from our bot: The `needs:info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | K1D77A (2023-05-12T09:25:15Z): > Do you have a reproduction case I can use?
+
+Make a request to an admin endpoint that accepts a JSON body (for example creating a new post) and do not include the Content-Type header. | github-actions (2023-05-25T13:07:30Z): Hey @K1D77A 👋
+
+Our team needed some more info to get to the bottom of this, however we've not heard back from you. We're going to close this for now, but let us know if you manage to dig up some more info and we'll reopen. Provide a nice message when missing content-type",1
+I_kwDOAJZX9s5kemBi,Trailing slash stripped from @site.url and resulting in redirects,CLOSED,NOT_PLANNED,16712.0,2023-04-26T21:21:56Z,2024-05-02T19:04:02Z,2024-05-02T19:04:02Z,https://github.com/TryGhost/Ghost/issues/16712,dan-jensen,"bug, stale",,"github-actions (2023-08-29T14:04:14Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | dan-jensen (2023-08-29T14:41:51Z): > I believe the problem can be solved by removing `trailingSlash: false` [in updateLocalTemplateOptions](https://github.com/TryGhost/Ghost/blob/792834e742b753dce3871b128e7f1f369498f34c/ghost/core/core/frontend/services/theme-engine/middleware/update-local-template-options.js#L12), but I'm not sure what effect that would have on Ghost installations on a domain (rather than a subdirectory).
+
+Looks like removing it would be safe. In researching this, everyone says trailing slashes after the domain name don’t matter ([example](https://ahrefs.com/blog/trailing-slash/), [example](https://linkilo.co/trailing-slashes/), [example](https://webmasters.stackexchange.com/a/20374)).
+
+I'm going to submit a PR. | github-actions (2023-12-27T15:04:20Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | dan-jensen (2023-12-27T16:44:23Z): PR is here: https://github.com/TryGhost/Ghost/pull/17859 | github-actions (2024-04-25T18:04:42Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"github-actions (2023-08-29T14:04:14Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | dan-jensen (2023-08-29T14:41:51Z): > I believe the problem can be solved by removing `trailingSlash: false` [in updateLocalTemplateOptions](https://github.com/TryGhost/Ghost/blob/792834e742b753dce3871b128e7f1f369498f34c/ghost/core/core/frontend/services/theme-engine/middleware/update-local-template-options.js#L12), but I'm not sure what effect that would have on Ghost installations on a domain (rather than a subdirectory).
+
+Looks like removing it would be safe. In researching this, everyone says trailing slashes after the domain name don’t matter ([example](https://ahrefs.com/blog/trailing-slash/), [example](https://linkilo.co/trailing-slashes/), [example](https://webmasters.stackexchange.com/a/20374)).
+
+I'm going to submit a PR. | github-actions (2023-12-27T15:04:20Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 | dan-jensen (2023-12-27T16:44:23Z): PR is here: https://github.com/TryGhost/Ghost/pull/17859 | github-actions (2024-04-25T18:04:42Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 Trailing slash stripped from @site.url and resulting in redirects",1
+I_kwDOAJZX9s5j8jD4,images added to posts in markdown are displayed differently than images added using the '+' button,CLOSED,NOT_PLANNED,16685.0,2023-04-20T14:12:44Z,2024-01-19T15:04:41Z,2024-01-19T15:04:41Z,https://github.com/TryGhost/Ghost/issues/16685,nwandabridges,"stale, design",,"asenseofpradhyu (2023-08-09T11:52:22Z): I attempted to reproduce the issue, but it appears that the images from both the markdown and the image '+' buttons look identical. If I am overlooking something, please do let me know. I am eager to contribute to resolving this issue.
+
+Please review this post; I followed the steps exactly as mentioned👇
+
+https://techwithpradhuman.ghost.io/bug-issue/ | nwandabridges (2023-08-09T13:34:38Z): Thanks for looking into this :)
+
+In your example, it appears that both images are centered, which is the expected behavior. However, this is not the behavior on my blog, which is using the current Casper theme (v5.6.0). My blog left-aligns markdown images. You can see my example here: https://andrewbridges.org/ghost-issue-16685-2/
+
+Additionally, neither example (yours or mine) shows a caption for the markdown image.
+
+When an image is added via markdown, I would expect the text between the brackets to be added as a caption:
+Example:
+```markdown
+![This is a caption](https://...)
+```
+
+Hopefully this is clear. Please let me know how I can help.
+
+-Andrew | asenseofpradhyu (2023-08-09T18:24:43Z): **1. Caption Issue:**
+
+When an image is added via markdown, you won't be able to see the caption because it functions as alt text. The alt text is designed to enhance accessibility by providing a description of the image's content to users who may not be able to view the image.
+
+Below are the features supported in markdown.
+![Screenshot 2023-08-09 at 10 29 09 PM](https://github.com/TryGhost/Ghost/assets/24241624/4f659712-a753-4cd9-a59f-e8e402a46fda)
+
+
+If you wish to include a caption with the image, I would recommend using an image with a '+' button.""
+
+**2. Image Center Align Issue:**
+
+Yes, I have identified an issue with certain images that have small dimensions. I will work on resolving this problem and submit a pull request for it. | nwandabridges (2023-08-09T18:33:12Z): Thanks for clarifying the caption behavior, and thanks for your work on the alignment issue :) | asenseofpradhyu (2023-08-10T10:37:49Z): Could you please assign me to this issue, @daniellockyer  ? I would appreciate the opportunity to work on it. | daniellockyer (2023-08-11T08:59:53Z): We don't assign issues to contributors but you're welcome to open a PR 🙂  | asenseofpradhyu (2023-08-12T06:34:58Z): As I was working into his issue I found that this issue is from https://github.com/TryGhost/Casper which is the default theme for Ghost. I also raised the same issue in the [Casper](https://github.com/TryGhost/Casper) repository.
+
+Ref:- https://github.com/TryGhost/Casper/issues/952 | asenseofpradhyu (2023-09-14T13:42:59Z): @daniellockyer when will be this issue can be merge ? | github-actions (2024-01-12T14:04:30Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"asenseofpradhyu (2023-08-09T11:52:22Z): I attempted to reproduce the issue, but it appears that the images from both the markdown and the image '+' buttons look identical. If I am overlooking something, please do let me know. I am eager to contribute to resolving this issue.
+
+Please review this post; I followed the steps exactly as mentioned👇
+
+https://techwithpradhuman.ghost.io/bug-issue/ | nwandabridges (2023-08-09T13:34:38Z): Thanks for looking into this :)
+
+In your example, it appears that both images are centered, which is the expected behavior. However, this is not the behavior on my blog, which is using the current Casper theme (v5.6.0). My blog left-aligns markdown images. You can see my example here: https://andrewbridges.org/ghost-issue-16685-2/
+
+Additionally, neither example (yours or mine) shows a caption for the markdown image.
+
+When an image is added via markdown, I would expect the text between the brackets to be added as a caption:
+Example:
+```markdown
+![This is a caption](https://...)
+```
+
+Hopefully this is clear. Please let me know how I can help.
+
+-Andrew | asenseofpradhyu (2023-08-09T18:24:43Z): **1. Caption Issue:**
+
+When an image is added via markdown, you won't be able to see the caption because it functions as alt text. The alt text is designed to enhance accessibility by providing a description of the image's content to users who may not be able to view the image.
+
+Below are the features supported in markdown.
+![Screenshot 2023-08-09 at 10 29 09 PM](https://github.com/TryGhost/Ghost/assets/24241624/4f659712-a753-4cd9-a59f-e8e402a46fda)
+
+
+If you wish to include a caption with the image, I would recommend using an image with a '+' button.""
+
+**2. Image Center Align Issue:**
+
+Yes, I have identified an issue with certain images that have small dimensions. I will work on resolving this problem and submit a pull request for it. | nwandabridges (2023-08-09T18:33:12Z): Thanks for clarifying the caption behavior, and thanks for your work on the alignment issue :) | asenseofpradhyu (2023-08-10T10:37:49Z): Could you please assign me to this issue, @daniellockyer  ? I would appreciate the opportunity to work on it. | daniellockyer (2023-08-11T08:59:53Z): We don't assign issues to contributors but you're welcome to open a PR 🙂  | asenseofpradhyu (2023-08-12T06:34:58Z): As I was working into his issue I found that this issue is from https://github.com/TryGhost/Casper which is the default theme for Ghost. I also raised the same issue in the [Casper](https://github.com/TryGhost/Casper) repository.
+
+Ref:- https://github.com/TryGhost/Casper/issues/952 | asenseofpradhyu (2023-09-14T13:42:59Z): @daniellockyer when will be this issue can be merge ? | github-actions (2024-01-12T14:04:30Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 images added to posts in markdown are displayed differently than images added using the '+' button",1
+I_kwDOAJZX9s5hW1Gg,Postgres driver doesn't get installed automatically,CLOSED,NOT_PLANNED,16455.0,2023-03-21T07:41:55Z,2023-03-22T14:04:34Z,2023-03-21T10:20:42Z,https://github.com/TryGhost/Ghost/issues/16455,mesudip,self hosting,,"mesudip (2023-03-21T08:52:40Z): I managed to install the driver manually. But the migration is not compatible with PostgreSQL
+```
+[2023-03-21 08:38:32] INFO Ghost is running in development...
+[2023-03-21 08:38:32] INFO Listening on: :::2368
+[2023-03-21 08:38:32] INFO Url configured as: https://example.com/
+[2023-03-21 08:38:32] INFO Ctrl+C to shut down
+[2023-03-21 08:38:32] INFO Ghost server started in 0.303s
+[2023-03-21 08:38:33] ERROR alter table ""migrations_lock"" add constraint ""migrations_lock_pkey"" primary key (""lock_key"") - multiple primary keys for table ""migrations_lock"" are not allowed
+
+alter table ""migrations_lock"" add constraint ""migrations_lock_pkey"" primary key (""lock_key"") - multiple primary keys for table ""migrations_lock"" are not allowed
+
+Error ID:
+    c377c570-c7c3-11ed-ac17-5f1013cae863
+
+Error Code: 
+    42P16
+
+----------------------------------------
+
+error: alter table ""migrations_lock"" add constraint ""migrations_lock_pkey"" primary key (""lock_key"") - multiple primary keys for table ""migrations_lock"" are not allowed
+    at DatabaseStateManager.getState (/var/lib/ghost/versions/5.39.0/core/server/data/db/state-manager.js:64:32)
+    at Parser.parseErrorMessage (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/parser.js:287:98)
+    at Parser.handlePacket (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at Socket.Readable.push (node:internal/streams/readable:228:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+
+[2023-03-21 08:38:33] WARN Ghost is shutting down
+[2023-03-21 08:38:33] WARN Ghost has shut down
+[2023-03-21 08:38:33] WARN Ghost was running for a few seconds
+``` | github-actions (2023-03-21T10:20:41Z): Hey @mesudip 👋
+
+We've reviewed your bug report and believe the issue is environment specific, rather than a bug. Many questions can be answered by reviewing our [documentation](https://ghost.org/docs/). If you can't find an answer then our [forum](https://forum.ghost.org/c/help/self-hosting/18) is a great place to get community support, plus it helps create a central location for searching problems/solutions. | daniellockyer (2023-03-21T10:24:26Z): Hi @mesudip - Postgres is not a supported database in Ghost v5 🙂 https://ghost.org/docs/faq/supported-databases/ | mesudip (2023-03-22T14:04:34Z): @daniellockyer, 
+
+I just wanted to quickly setup ghost and followed the configuration docs [docs/config/#configuration-options](https://ghost.org/docs/config/#configuration-options).  It would be nice to alert with `Unsupported database backend`  instead of failing while attempting to install driver or when attempting migration.
+  
+  Thanks for the reply, I got it running with `mariadb` database without any issues.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"mesudip (2023-03-21T08:52:40Z): I managed to install the driver manually. But the migration is not compatible with PostgreSQL
+```
+[2023-03-21 08:38:32] INFO Ghost is running in development...
+[2023-03-21 08:38:32] INFO Listening on: :::2368
+[2023-03-21 08:38:32] INFO Url configured as: https://example.com/
+[2023-03-21 08:38:32] INFO Ctrl+C to shut down
+[2023-03-21 08:38:32] INFO Ghost server started in 0.303s
+[2023-03-21 08:38:33] ERROR alter table ""migrations_lock"" add constraint ""migrations_lock_pkey"" primary key (""lock_key"") - multiple primary keys for table ""migrations_lock"" are not allowed
+
+alter table ""migrations_lock"" add constraint ""migrations_lock_pkey"" primary key (""lock_key"") - multiple primary keys for table ""migrations_lock"" are not allowed
+
+Error ID:
+    c377c570-c7c3-11ed-ac17-5f1013cae863
+
+Error Code: 
+    42P16
+
+----------------------------------------
+
+error: alter table ""migrations_lock"" add constraint ""migrations_lock_pkey"" primary key (""lock_key"") - multiple primary keys for table ""migrations_lock"" are not allowed
+    at DatabaseStateManager.getState (/var/lib/ghost/versions/5.39.0/core/server/data/db/state-manager.js:64:32)
+    at Parser.parseErrorMessage (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/parser.js:287:98)
+    at Parser.handlePacket (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/var/lib/ghost/versions/5.39.0/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at Socket.Readable.push (node:internal/streams/readable:228:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+
+[2023-03-21 08:38:33] WARN Ghost is shutting down
+[2023-03-21 08:38:33] WARN Ghost has shut down
+[2023-03-21 08:38:33] WARN Ghost was running for a few seconds
+``` | github-actions (2023-03-21T10:20:41Z): Hey @mesudip 👋
+
+We've reviewed your bug report and believe the issue is environment specific, rather than a bug. Many questions can be answered by reviewing our [documentation](https://ghost.org/docs/). If you can't find an answer then our [forum](https://forum.ghost.org/c/help/self-hosting/18) is a great place to get community support, plus it helps create a central location for searching problems/solutions. | daniellockyer (2023-03-21T10:24:26Z): Hi @mesudip - Postgres is not a supported database in Ghost v5 🙂 https://ghost.org/docs/faq/supported-databases/ | mesudip (2023-03-22T14:04:34Z): @daniellockyer, 
+
+I just wanted to quickly setup ghost and followed the configuration docs [docs/config/#configuration-options](https://ghost.org/docs/config/#configuration-options).  It would be nice to alert with `Unsupported database backend`  instead of failing while attempting to install driver or when attempting migration.
+  
+  Thanks for the reply, I got it running with `mariadb` database without any issues. Postgres driver doesn't get installed automatically",1
+I_kwDOAJZX9s5fDDla,Got “Invalid token” in Admin API Token authentication even with the token generated by the Bash (cURL) sample code in Doc.,CLOSED,NOT_PLANNED,16313.0,2023-02-22T08:04:41Z,2023-02-27T10:53:31Z,2023-02-27T10:52:38Z,https://github.com/TryGhost/Ghost/issues/16313,GavinCnod,support request,,"github-actions (2023-02-27T10:52:37Z): Hey @GavinCnod 👋 We ask that you please do not use GitHub for help or support 😄. We use GitHub solely for bug-tracking and community-driven development.
+
+Many questions can be answered by reviewing our [documentation](https://ghost.org/docs/). If you can't find an answer then our [forum](https://forum.ghost.org/c/help/6) is a great place to get community support, plus it helps create a central location for searching problems/solutions.
+
+FYI: Many projects use issue templates to point you in the right direction. Reading the guidelines or issue templates before opening issues can save you and project maintainers valuable time. | daniellockyer (2023-02-27T10:53:31Z): @GavinCnod I've labelled this a support request as it belongs on the forum, but the Bash example listed [here](https://ghost.org/docs/admin-api/#token-authentication) also works as-is for me, just by replacing the Admin API key.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"github-actions (2023-02-27T10:52:37Z): Hey @GavinCnod 👋 We ask that you please do not use GitHub for help or support 😄. We use GitHub solely for bug-tracking and community-driven development.
+
+Many questions can be answered by reviewing our [documentation](https://ghost.org/docs/). If you can't find an answer then our [forum](https://forum.ghost.org/c/help/6) is a great place to get community support, plus it helps create a central location for searching problems/solutions.
+
+FYI: Many projects use issue templates to point you in the right direction. Reading the guidelines or issue templates before opening issues can save you and project maintainers valuable time. | daniellockyer (2023-02-27T10:53:31Z): @GavinCnod I've labelled this a support request as it belongs on the forum, but the Bash example listed [here](https://ghost.org/docs/admin-api/#token-authentication) also works as-is for me, just by replacing the Admin API key. Got “Invalid token” in Admin API Token authentication even with the token generated by the Bash (cURL) sample code in Doc.",1
+I_kwDOAJZX9s5dEWM5,OG Image problem,CLOSED,NOT_PLANNED,16195.0,2023-01-29T19:06:40Z,2023-07-22T09:04:26Z,2023-07-22T09:04:26Z,https://github.com/TryGhost/Ghost/issues/16195,gabrielpaivadev,"needs:info, stale",,"daniellockyer (2023-02-07T08:31:06Z): Hey @gabrielpaivadev 👋🏻 
+
+When you say ""OG image doesn't work"", what exactly do you mean? Whilst the URL is encoded, if I dump it into an OG tags checker, it reports the image is fine.
+
+For example, https://www.opengraph.xyz/url/https%3A%2F%2Fcarro10.com.br%2Fekstrom-supera-schumacher-e-conquista-tetracampeonato-no-roc-2023%2F | github-actions (2023-02-07T08:31:23Z): Note from our bot: The `needs info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | gabrielpaivadev (2023-03-17T07:33:43Z): Hi @daniellockyer 
+
+Can you check the source code from website, please?
+
+This tool above fixed this problem.
+
+Thanks! | github-actions (2023-07-15T08:04:43Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"daniellockyer (2023-02-07T08:31:06Z): Hey @gabrielpaivadev 👋🏻 
+
+When you say ""OG image doesn't work"", what exactly do you mean? Whilst the URL is encoded, if I dump it into an OG tags checker, it reports the image is fine.
+
+For example, https://www.opengraph.xyz/url/https%3A%2F%2Fcarro10.com.br%2Fekstrom-supera-schumacher-e-conquista-tetracampeonato-no-roc-2023%2F | github-actions (2023-02-07T08:31:23Z): Note from our bot: The `needs info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | gabrielpaivadev (2023-03-17T07:33:43Z): Hi @daniellockyer 
+
+Can you check the source code from website, please?
+
+This tool above fixed this problem.
+
+Thanks! | github-actions (2023-07-15T08:04:43Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 OG Image problem",1
+I_kwDOAJZX9s5WY6_u,Docker examples of ghost installation is not working,CLOSED,COMPLETED,15827.0,2022-11-15T08:27:56Z,2022-11-15T08:37:26Z,2022-11-15T08:37:16Z,https://github.com/TryGhost/Ghost/issues/15827,suryatmodulus,,,ErisDS (2022-11-15T08:37:16Z): The Ghost Docker image is maintained by the Docker community here: https://github.com/docker-library/ghost,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,1,0,,ErisDS (2022-11-15T08:37:16Z): The Ghost Docker image is maintained by the Docker community here: https://github.com/docker-library/ghost Docker examples of ghost installation is not working,1
+I_kwDOAJZX9s5VXTPv,"Comments section does not support RTL languages (Arabic, Hebrew, ..)",CLOSED,NOT_PLANNED,15752.0,2022-11-01T22:14:07Z,2023-05-17T11:04:09Z,2023-05-17T11:04:09Z,https://github.com/TryGhost/Ghost/issues/15752,alfarhan,"bug, help wanted, stale",,"ErisDS (2022-11-02T14:34:59Z): Hey there, thank you so much for the bug report.
+
+That does sound like something that shouldn't happen! A PR to fix this issue would be very welcome 🙂 | alfarhan (2022-11-02T17:58:50Z): Thanks @ErisDS 
+I uploaded 2 screenshots above to view the current and how it should look. | akash19coder (2022-11-26T06:15:27Z): @ErisDS I would like to give this issue a try 😀 . | alfarhan (2022-12-10T22:32:39Z): > @ErisDS 
+
+Any hope? highly appreciate your support | ErisDS (2022-12-16T23:08:47Z): A PR for this issue would be very welcome. | deounix (2022-12-28T02:08:33Z): @ErisDS
+
+The main languages that uses RTL scripts:
+
+1. Arabic (ISO 639-1 Code >> ar)
+2. Aramaic (ISO 639-1 Code >> ????)
+3. Azeri (ISO 639-1 Code >> az)
+4. Dhivehi/Maldivian
+5. Hebrew
+6. Kurdish (Sorani)
+7. Persian/Farsi
+8. Urdu
+
+And some of them doesn't have an ISO 639-1 Code for example: (Aramaic) so we can't count on **Publication Language** to decide whether this langauge should be displayed from right to left or left to right.
+
+I think the best way to do it is to add a new option in the admin panel (settings/general) under **Publication Language**
+
+`Site Direction`: which is basically a dropdown with two options `(LTR - RTL)`.
+
+Site Direction should be applied to the admin panel also because doing it only on (user side or comments section) make no sense.
+
+Please let me know if you're ok with what I mention because I would like to help with this issue. | a0m0rajab (2022-12-30T01:29:47Z): @alfarhan I think this could be solved from the CSS file in the theme folder, would not this solve the issue?
+
+If a pull request should be made for this, It would be at the https://github.com/TryGhost/comments-ui repository, we can get the idea from @deounix and create a list for RTL languages to check it at the repository. Instead of complicating the UI for non RTL users as what mentioned in this comment: https://github.com/TryGhost/Casper/pull/306#issuecomment-479492611
+
+@ErisDS is there a way to pass the language as parameter to the comments-ui?  | alfarhan (2022-12-30T05:08:58Z): > @alfarhan I think this could be solved from the CSS file in the theme folder, would not this solve the issue?
+> 
+> If a pull request should be made for this, It would be at the https://github.com/TryGhost/comments-ui repository, we can get the idea from @deounix and create a list for RTL languages to check it at the repository. Instead of complicating the UI for non RTL users as what mentioned in this comment: [TryGhost/Casper#306 (comment)](https://github.com/TryGhost/Casper/pull/306#issuecomment-479492611)
+> 
+> @ErisDS is there a way to pass the language as parameter to the comments-ui?
+
+@akash19coder 
+The theme css does not cover this. Adding codes to the header will not make an impact since the whole comment area design is in iframe.  | farhan787 (2023-01-04T11:45:19Z): I started to work on this issue a few days ago and I wasn't sure where the repo for comments CSS components was as it was serving through a [CDN URL](https://cdn.jsdelivr.net/ghost/comments-ui@~0.12/umd/main.css), thanks @a0m0rajab for mentioning the `comments-ui` repo. 
+
+I've added below language codes in the settings to check if current locale language is RTL or not, let me know if I missed any `rtl locale code`. 
+
+```js
+const rtlLocaleCodes = ['ar', 'arc', 'dv','fa', 'ha',  'he', 'iw', 'khw', 'ks', 'ku', 'ps',  'ur', 'yi'];
+```
+
+Will open the PR today or tomorrow morning. | farhan787 (2023-01-04T11:47:01Z): @alfarhan I checked your Arabic website and you're right if we set direction to `rtl` in HTML headers then other HTML components like NavBar, etc are also reversed, we'd need to make changes in the CSS for RTL languages.  | a0m0rajab (2023-01-06T19:47:33Z): @farhan787 sounds great! Could you figure out how to pass the localeCodes to the comments-ui? I got stuck at that point.  | farhan787 (2023-01-10T10:40:47Z): @a0m0rajab the comments data comes in the `script[data-ghost-comments]` component, see [this](https://github.com/TryGhost/comments-ui/blob/6de9cc06d9cbb77392f631de9fce63951a6c4524/src/index.js#L28). 
+
+I got a bit occupied in some personal things, I was fixing the CSS styles for Right to Left direction, if you'd the CSS sorted then you can follow below steps to test your changes,
+
+You can hardcode the data for testing purpose with your local dev setup, like this, before [this line of code](https://github.com/TryGhost/comments-ui/blob/6de9cc06d9cbb77392f631de9fce63951a6c4524/src/index.js#L38)
+
+```js
+dataset = {
+        ghostComments: 'http://127.0.0.1:2368/',
+        api: 'http://127.0.0.1:2368/ghost/api/content/',
+        admin: 'http://127.0.0.1:2368/ghost/',
+        key: '533a0e67d59dac0119f600d0ce',
+        styles: 'http://127.0.0.1:5369/public/main.css',
+        title: 'null',
+        count: 'true',
+        postId: '63a6163af8fbe027fdba0133',
+        sentryDsn: '',
+        colorScheme: 'auto',
+        avatarSaturation: '60',
+        accentColor: '#FF1A75',
+        appVersion: '0.12',
+        commentsEnabled: 'all',
+        publication: 'The Daily Awesome',
+        isRtlLang: true
+    };
+```
+
+After this, in your ghost repo, add this comments key in the package.json file to point to the local comments-ui server. 
+```json
+""comments"": {
+        ""url"": ""http://127.0.0.1:5369/comments""
+    }
+```
+
+The CSS changes would also reflect in the ghost server's UI.  | github-actions (2023-05-10T11:04:00Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"ErisDS (2022-11-02T14:34:59Z): Hey there, thank you so much for the bug report.
+
+That does sound like something that shouldn't happen! A PR to fix this issue would be very welcome 🙂 | alfarhan (2022-11-02T17:58:50Z): Thanks @ErisDS 
+I uploaded 2 screenshots above to view the current and how it should look. | akash19coder (2022-11-26T06:15:27Z): @ErisDS I would like to give this issue a try 😀 . | alfarhan (2022-12-10T22:32:39Z): > @ErisDS 
+
+Any hope? highly appreciate your support | ErisDS (2022-12-16T23:08:47Z): A PR for this issue would be very welcome. | deounix (2022-12-28T02:08:33Z): @ErisDS
+
+The main languages that uses RTL scripts:
+
+1. Arabic (ISO 639-1 Code >> ar)
+2. Aramaic (ISO 639-1 Code >> ????)
+3. Azeri (ISO 639-1 Code >> az)
+4. Dhivehi/Maldivian
+5. Hebrew
+6. Kurdish (Sorani)
+7. Persian/Farsi
+8. Urdu
+
+And some of them doesn't have an ISO 639-1 Code for example: (Aramaic) so we can't count on **Publication Language** to decide whether this langauge should be displayed from right to left or left to right.
+
+I think the best way to do it is to add a new option in the admin panel (settings/general) under **Publication Language**
+
+`Site Direction`: which is basically a dropdown with two options `(LTR - RTL)`.
+
+Site Direction should be applied to the admin panel also because doing it only on (user side or comments section) make no sense.
+
+Please let me know if you're ok with what I mention because I would like to help with this issue. | a0m0rajab (2022-12-30T01:29:47Z): @alfarhan I think this could be solved from the CSS file in the theme folder, would not this solve the issue?
+
+If a pull request should be made for this, It would be at the https://github.com/TryGhost/comments-ui repository, we can get the idea from @deounix and create a list for RTL languages to check it at the repository. Instead of complicating the UI for non RTL users as what mentioned in this comment: https://github.com/TryGhost/Casper/pull/306#issuecomment-479492611
+
+@ErisDS is there a way to pass the language as parameter to the comments-ui?  | alfarhan (2022-12-30T05:08:58Z): > @alfarhan I think this could be solved from the CSS file in the theme folder, would not this solve the issue?
+> 
+> If a pull request should be made for this, It would be at the https://github.com/TryGhost/comments-ui repository, we can get the idea from @deounix and create a list for RTL languages to check it at the repository. Instead of complicating the UI for non RTL users as what mentioned in this comment: [TryGhost/Casper#306 (comment)](https://github.com/TryGhost/Casper/pull/306#issuecomment-479492611)
+> 
+> @ErisDS is there a way to pass the language as parameter to the comments-ui?
+
+@akash19coder 
+The theme css does not cover this. Adding codes to the header will not make an impact since the whole comment area design is in iframe.  | farhan787 (2023-01-04T11:45:19Z): I started to work on this issue a few days ago and I wasn't sure where the repo for comments CSS components was as it was serving through a [CDN URL](https://cdn.jsdelivr.net/ghost/comments-ui@~0.12/umd/main.css), thanks @a0m0rajab for mentioning the `comments-ui` repo. 
+
+I've added below language codes in the settings to check if current locale language is RTL or not, let me know if I missed any `rtl locale code`. 
+
+```js
+const rtlLocaleCodes = ['ar', 'arc', 'dv','fa', 'ha',  'he', 'iw', 'khw', 'ks', 'ku', 'ps',  'ur', 'yi'];
+```
+
+Will open the PR today or tomorrow morning. | farhan787 (2023-01-04T11:47:01Z): @alfarhan I checked your Arabic website and you're right if we set direction to `rtl` in HTML headers then other HTML components like NavBar, etc are also reversed, we'd need to make changes in the CSS for RTL languages.  | a0m0rajab (2023-01-06T19:47:33Z): @farhan787 sounds great! Could you figure out how to pass the localeCodes to the comments-ui? I got stuck at that point.  | farhan787 (2023-01-10T10:40:47Z): @a0m0rajab the comments data comes in the `script[data-ghost-comments]` component, see [this](https://github.com/TryGhost/comments-ui/blob/6de9cc06d9cbb77392f631de9fce63951a6c4524/src/index.js#L28). 
+
+I got a bit occupied in some personal things, I was fixing the CSS styles for Right to Left direction, if you'd the CSS sorted then you can follow below steps to test your changes,
+
+You can hardcode the data for testing purpose with your local dev setup, like this, before [this line of code](https://github.com/TryGhost/comments-ui/blob/6de9cc06d9cbb77392f631de9fce63951a6c4524/src/index.js#L38)
+
+```js
+dataset = {
+        ghostComments: 'http://127.0.0.1:2368/',
+        api: 'http://127.0.0.1:2368/ghost/api/content/',
+        admin: 'http://127.0.0.1:2368/ghost/',
+        key: '533a0e67d59dac0119f600d0ce',
+        styles: 'http://127.0.0.1:5369/public/main.css',
+        title: 'null',
+        count: 'true',
+        postId: '63a6163af8fbe027fdba0133',
+        sentryDsn: '',
+        colorScheme: 'auto',
+        avatarSaturation: '60',
+        accentColor: '#FF1A75',
+        appVersion: '0.12',
+        commentsEnabled: 'all',
+        publication: 'The Daily Awesome',
+        isRtlLang: true
+    };
+```
+
+After this, in your ghost repo, add this comments key in the package.json file to point to the local comments-ui server. 
+```json
+""comments"": {
+        ""url"": ""http://127.0.0.1:5369/comments""
+    }
+```
+
+The CSS changes would also reflect in the ghost server's UI.  | github-actions (2023-05-10T11:04:00Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 Comments section does not support RTL languages (Arabic, Hebrew, ..)",1
+I_kwDOAJZX9s5VTedv,Migration failed update from 5.19.3 to 5.22.1,CLOSED,NOT_PLANNED,15743.0,2022-11-01T09:59:34Z,2023-03-11T18:04:43Z,2023-03-11T18:04:43Z,https://github.com/TryGhost/Ghost/issues/15743,nik-nazarov,"help wanted, stale",,"ErisDS (2022-11-01T22:21:03Z): Please can you connect to your DB and run `SELECT @@sql_mode` and share the output?  | github-actions (2022-11-01T22:21:19Z): Note from our bot: The `needs info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | nik-nazarov (2022-11-02T08:23:27Z): Hi @ErisDS, sure
+
+```sql
+NO_ENGINE_SUBSTITUTION
+``` | ErisDS (2022-11-02T10:17:12Z): > The default SQL mode in MySQL 8.0 includes these modes: [ONLY_FULL_GROUP_BY](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_only_full_group_by), [STRICT_TRANS_TABLES](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_strict_trans_tables), [NO_ZERO_IN_DATE](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_zero_in_date), [NO_ZERO_DATE](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_zero_date), [ERROR_FOR_DIVISION_BY_ZERO](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_error_for_division_by_zero), and [NO_ENGINE_SUBSTITUTION](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_engine_substitution).
+- From https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
+
+Ghost expects the default sql mode, and **requires** STRICT_TRANS_TABLES
+
+I'll leave this open for the time being to:
+
+1. Get this documented
+2. Look at catching these errors and instead throwing something more specific like ""Incorrect SQL Mode, STRICT_TRANS_TABLES is required.
+
+If anyone would like to take on 2 that would be awesome. | nik-nazarov (2022-11-02T10:39:38Z): @ErisDS thank you for your reply, I've just update sql_mode to default value and now it works! | samrap (2022-11-02T19:34:33Z): @ErisDS @nik-nazarov  can you clarify what actually needs to be done here? 
+
+Our database is on RDS and I can't set the global sql mode. Have to pin to version 5.19.3 for the time being.  | nik-nazarov (2022-11-02T22:57:25Z): @samrap sure, you need to update sql_mode parameter in parameters groups that is attached to your RDS instance. 
+for example via UI or you can do it by terraform or another IaC tool
+![image](https://user-images.githubusercontent.com/86673860/199617886-3695fc37-4901-4ea6-aeee-57736ba950f4.png)
+
+PS: value for sql_mode:
+```shell
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+```
+ | samrap (2022-11-04T02:31:24Z): @nik-nazarov Brilliant! Thank you | danquack (2022-11-04T13:41:42Z): There was a foreign key relationship on the products table:
+```
+SELECT TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME FROM   INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE   REFERENCED_TABLE_SCHEMA = 'ghost'; 
+
+...
+| subscriptions                          | tier_id           | subscriptions_tier_id_foreign                               | products                               | id                     |
+```
+
+Where the product table had the key as NOT NULL:
+```
+show create table products;
+CREATE TABLE `products` (
+  `id` varchar(24) NOT NULL,
+  ...
+```
+
+To fix this I disabled the foreign key check and then altered the table:
+```
+mysql> SET FOREIGN_KEY_CHECKS = 0;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>  alter table `subscriptions` modify  `tier_id` varchar(24) not null;
+Query OK, 0 rows affected (0.22 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SET FOREIGN_KEY_CHECKS = 1;
+Query OK, 0 rows affected (0.07 sec)
+```
+
+It appears this is the commit that caused the change https://github.com/TryGhost/Ghost/commit/3858f255b9f6a0fa8e65f73959adf1682c4b129e, not sure how the schema migrations are validated, but this at least can get folks up and running until a patch goes in.
+
+ | ErisDS (2022-11-04T17:30:58Z): @danquack to be transparent I've hidden your comment as your approach to fixing this is a hack around the problem. There is not going to be a patch to change Ghost to use a non-default SQL mode.  
+
+The docs have now been updated: https://ghost.org/docs/faq/troubleshooting-mysql-database/#error-er_fk_column_cannot_change
+
+If anyone wants to take on the work of improving the error message for these cases to make the error clearer and point to the docs, that'd be great as this issue only affects self-hosters who have a non-default SQL mode & I understand it can be difficult to find the source of the problem from the current error.
+ | github-actions (2023-03-04T18:04:35Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,,"ErisDS (2022-11-01T22:21:03Z): Please can you connect to your DB and run `SELECT @@sql_mode` and share the output?  | github-actions (2022-11-01T22:21:19Z): Note from our bot: The `needs info` label has been added to this issue. Updating your original issue with more details is great, but won't notify us, so please make sure you leave a comment so that we can see when you've updated us. | nik-nazarov (2022-11-02T08:23:27Z): Hi @ErisDS, sure
+
+```sql
+NO_ENGINE_SUBSTITUTION
+``` | ErisDS (2022-11-02T10:17:12Z): > The default SQL mode in MySQL 8.0 includes these modes: [ONLY_FULL_GROUP_BY](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_only_full_group_by), [STRICT_TRANS_TABLES](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_strict_trans_tables), [NO_ZERO_IN_DATE](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_zero_in_date), [NO_ZERO_DATE](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_zero_date), [ERROR_FOR_DIVISION_BY_ZERO](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_error_for_division_by_zero), and [NO_ENGINE_SUBSTITUTION](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_no_engine_substitution).
+- From https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
+
+Ghost expects the default sql mode, and **requires** STRICT_TRANS_TABLES
+
+I'll leave this open for the time being to:
+
+1. Get this documented
+2. Look at catching these errors and instead throwing something more specific like ""Incorrect SQL Mode, STRICT_TRANS_TABLES is required.
+
+If anyone would like to take on 2 that would be awesome. | nik-nazarov (2022-11-02T10:39:38Z): @ErisDS thank you for your reply, I've just update sql_mode to default value and now it works! | samrap (2022-11-02T19:34:33Z): @ErisDS @nik-nazarov  can you clarify what actually needs to be done here? 
+
+Our database is on RDS and I can't set the global sql mode. Have to pin to version 5.19.3 for the time being.  | nik-nazarov (2022-11-02T22:57:25Z): @samrap sure, you need to update sql_mode parameter in parameters groups that is attached to your RDS instance. 
+for example via UI or you can do it by terraform or another IaC tool
+![image](https://user-images.githubusercontent.com/86673860/199617886-3695fc37-4901-4ea6-aeee-57736ba950f4.png)
+
+PS: value for sql_mode:
+```shell
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+```
+ | samrap (2022-11-04T02:31:24Z): @nik-nazarov Brilliant! Thank you | danquack (2022-11-04T13:41:42Z): There was a foreign key relationship on the products table:
+```
+SELECT TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME FROM   INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE   REFERENCED_TABLE_SCHEMA = 'ghost'; 
+
+...
+| subscriptions                          | tier_id           | subscriptions_tier_id_foreign                               | products                               | id                     |
+```
+
+Where the product table had the key as NOT NULL:
+```
+show create table products;
+CREATE TABLE `products` (
+  `id` varchar(24) NOT NULL,
+  ...
+```
+
+To fix this I disabled the foreign key check and then altered the table:
+```
+mysql> SET FOREIGN_KEY_CHECKS = 0;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>  alter table `subscriptions` modify  `tier_id` varchar(24) not null;
+Query OK, 0 rows affected (0.22 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SET FOREIGN_KEY_CHECKS = 1;
+Query OK, 0 rows affected (0.07 sec)
+```
+
+It appears this is the commit that caused the change https://github.com/TryGhost/Ghost/commit/3858f255b9f6a0fa8e65f73959adf1682c4b129e, not sure how the schema migrations are validated, but this at least can get folks up and running until a patch goes in.
+
+ | ErisDS (2022-11-04T17:30:58Z): @danquack to be transparent I've hidden your comment as your approach to fixing this is a hack around the problem. There is not going to be a patch to change Ghost to use a non-default SQL mode.  
+
+The docs have now been updated: https://ghost.org/docs/faq/troubleshooting-mysql-database/#error-er_fk_column_cannot_change
+
+If anyone wants to take on the work of improving the error message for these cases to make the error clearer and point to the docs, that'd be great as this issue only affects self-hosters who have a non-default SQL mode & I understand it can be difficult to find the source of the problem from the current error.
+ | github-actions (2023-03-04T18:04:35Z): Our bot has automatically marked this issue as stale because there has not been any activity here in some time.
+
+The issue will be closed soon if there are no further updates, however we ask that you do not post comments to keep the issue open if you are not actively working on a PR.
+
+We keep the issue list minimal so we can keep focus on the most pressing issues. Closed issues can always be reopened if a new contributor is found. Thank you for understanding 🙂 Migration failed update from 5.19.3 to 5.22.1",1

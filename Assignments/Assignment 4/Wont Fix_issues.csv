@@ -1,0 +1,24 @@
+ID,Title,State,State Reason,Number,Created At,Updated At,Closed At,URL,Author,Labels,Assignees,Comments,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24,Unnamed: 25,Unnamed: 26,Unnamed: 27,Unnamed: 28,Unnamed: 29,Unnamed: 30,Unnamed: 31,Unnamed: 32,Unnamed: 33,Unnamed: 34,Unnamed: 35,Unnamed: 36,Unnamed: 37,Unnamed: 38,Unnamed: 39,Unnamed: 40,Unnamed: 41,Unnamed: 42,Unnamed: 43,Unnamed: 44,Unnamed: 45,Unnamed: 46,Unnamed: 47,Unnamed: 48,Unnamed: 49,Unnamed: 50,Unnamed: 51,Unnamed: 52,Unnamed: 53,Unnamed: 54,Unnamed: 55,Unnamed: 56,Unnamed: 57,Unnamed: 58,Unnamed: 59,Unnamed: 60,Unnamed: 61,Unnamed: 62,Unnamed: 63,Unnamed: 64,Unnamed: 65,Unnamed: 66,Unnamed: 67,Unnamed: 68,Unnamed: 69,Unnamed: 70,Unnamed: 71,Unnamed: 72,Unnamed: 73,Unnamed: 74,Unnamed: 75,Unnamed: 76,Unnamed: 77,Unnamed: 78,Unnamed: 79,Unnamed: 80,Unnamed: 81,Unnamed: 82,Unnamed: 83,Unnamed: 84,Unnamed: 85,Unnamed: 86,Unnamed: 87,Unnamed: 88,Unnamed: 89,Unnamed: 90,Unnamed: 91,Unnamed: 92,Unnamed: 93,Unnamed: 94,Unnamed: 95,Unnamed: 96,Unnamed: 97,Unnamed: 98,Unnamed: 99,Unnamed: 100,Unnamed: 101,Unnamed: 102,Unnamed: 103,0,0.1,0.2,24,Classification
+I_kwDOAJZX9s5s7t6F,Ghost Redirect yaml broke my site,CLOSED,NOT_PLANNED,17531.0,2023-07-29T18:37:47Z,2023-07-31T18:32:50Z,2023-07-31T18:32:37Z,https://github.com/TryGhost/Ghost/issues/17531,mikejones3,,,"RohitLakh (2023-07-30T10:11:52Z): @mikejones3 The regex that you are using for `/` will match for any url. 
+URL home/ -> home/home/ -> home/home/home/ till infinite until the server stops redirecting. 
+
+You can use regex here to implement the base route that you want to update
+
+This would work just fine for you.
+
+```
+301:
+  ^\/$: /home/
+```
+
+This will only match `/`, nothing before and nothing after | mikejones3 (2023-07-30T15:28:12Z): thanks! | ErisDS (2023-07-31T18:32:37Z): Hi @mikejones3, Ghost has worked as expected here. As @RohitLakh has explained, the redirect you have setup will match any path.
+
+You've also setup your redirect to point to `/home` without a trailing slash, but Ghost always redirects to the version with a trailing slash, probably adding to the pain here.
+
+I think you already found a similar reply from me [on the forum](https://forum.ghost.org/t/undoing-a-redirect-loop/26795/4) but a 301 redirect is a permanent redirect and will be heavily cached, so it's expected that uploading a new file alone won't fix the broken redirect.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Wont Fix
+I_kwDOAJZX9s5pwhBL,Deleting a block cannot be properly undone if text is pasted in. Undo returns to the text replaced by the paste.,CLOSED,NOT_PLANNED,17130.0,2023-06-26T09:21:36Z,2023-09-22T16:00:34Z,2023-09-22T16:00:23Z,https://github.com/TryGhost/Ghost/issues/17130,mfitzp,bug,,"mfitzp (2023-06-26T09:38:28Z): Having experimented a bit further, this behavior also affects code blocks.  | RohitLakh (2023-06-28T06:06:09Z): @mfitzp It would be helpful if you can specify if you are using the `beta editor` or the `old editor`. | SamarthBagga (2023-06-28T14:54:29Z): Hi @RohitLakh are you working on this issue? | RohitLakh (2023-06-28T15:04:57Z): @SamarthBagga You can pick it up if you want to | SamarthBagga (2023-06-28T15:05:30Z): @RohitLakh thank you ill start working on it.
+ | SamarthBagga (2023-06-29T19:17:21Z): It seems like there is no code to handle the undo behavior in the editor, thus it relies on the browser's native undo functionality. I am thinking of adding a custom undo function handler specifically for the callout and code blocks. Is this an acceptable fix ? | mfitzp (2023-07-01T20:33:17Z): @RohitLakh this is on the old editor. I'd just set up on Ghost Pro so wasn't aware there were two options. 
+
+@SamarthBagga Having tried it just now, I can't reproduce this in the beta editor.  | 9larsons (2023-08-29T17:45:51Z): We don't have much appetite to resolve this given we're working hard to move the beta editor out of beta. 
+
+@SamarthBagga if you would like to submit a PR, I can take a look. However if you're just looking to contribute in some fashion - not specifically this issue - I'd recommend checking out another given that we're actively working to phase out mobiledoc. | markstos (2023-09-15T13:38:06Z): I recommend closing this as wont-fix, given that there's a reasonable workaround of switching to the new editor. ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,,Wont Fix
